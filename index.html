@@ -1,0 +1,3365 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PulseDesk v12</title>
+  <meta name="description" content="PulseDesk: a calm second-screen dashboard for juggling several projects, with check-in reminders and focus time tracking. Data stays in your browser." />
+  <meta name="theme-color" content="#0f172a" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230ea5e9'/%3E%3Ccircle cx='32' cy='32' r='17' fill='none' stroke='%230f172a' stroke-width='5'/%3E%3Cpath d='M32 22v11l7 6' fill='none' stroke='%230f172a' stroke-width='5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E" />
+  <!-- Tailwind utilities, pre-built for this page (no runtime CDN) -->
+  <style>*,:after,:before{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgba(59,130,246,.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgba(59,130,246,.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/*! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com*/*,:after,:before{border:0 solid #e5e7eb;box-sizing:border-box}:after,:before{--tw-content:""}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;font-family:ui-sans-serif,system-ui,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;font-feature-settings:normal;font-variation-settings:normal;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-tap-highlight-color:transparent}body{line-height:inherit;margin:0}hr{border-top-width:1px;color:inherit;height:0}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace;font-feature-settings:normal;font-size:1em;font-variation-settings:normal}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{border-collapse:collapse;border-color:inherit;text-indent:0}button,input,optgroup,select,textarea{color:inherit;font-family:inherit;font-feature-settings:inherit;font-size:100%;font-variation-settings:inherit;font-weight:inherit;letter-spacing:inherit;line-height:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0}fieldset,legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::-moz-placeholder,textarea::-moz-placeholder{color:#9ca3af;opacity:1}input::placeholder,textarea::placeholder{color:#9ca3af;opacity:1}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{height:auto;max-width:100%}[hidden]:where(:not([hidden=until-found])){display:none}.\!container{width:100%!important}.container{width:100%}@media (min-width:640px){.\!container{max-width:640px!important}.container{max-width:640px}}@media (min-width:768px){.\!container{max-width:768px!important}.container{max-width:768px}}@media (min-width:1024px){.\!container{max-width:1024px!important}.container{max-width:1024px}}@media (min-width:1280px){.\!container{max-width:1280px!important}.container{max-width:1280px}}@media (min-width:1536px){.\!container{max-width:1536px!important}.container{max-width:1536px}}.visible{visibility:visible}.collapse{visibility:collapse}.static{position:static}.fixed{position:fixed}.relative{position:relative}.inset-0{inset:0}.bottom-5{bottom:1.25rem}.right-5{right:1.25rem}.-z-10{z-index:-10}.-z-20{z-index:-20}.z-10{z-index:10}.z-50{z-index:50}.mx-1\.5{margin-left:.375rem;margin-right:.375rem}.mx-auto{margin-left:auto;margin-right:auto}.mb-1{margin-bottom:.25rem}.mb-1\.5{margin-bottom:.375rem}.ml-1{margin-left:.25rem}.mt-0\.5{margin-top:.125rem}.mt-1{margin-top:.25rem}.mt-4{margin-top:1rem}.block{display:block}.flex{display:flex}.inline-flex{display:inline-flex}.grid{display:grid}.hidden{display:none}.h-1\.5{height:.375rem}.h-11{height:2.75rem}.h-2{height:.5rem}.h-2\.5{height:.625rem}.h-20{height:5rem}.h-3\.5{height:.875rem}.h-4{height:1rem}.h-5{height:1.25rem}.h-6{height:1.5rem}.h-8{height:2rem}.h-9{height:2.25rem}.h-full{height:100%}.max-h-32{max-height:8rem}.max-h-40{max-height:10rem}.max-h-72{max-height:18rem}.max-h-80{max-height:20rem}.max-h-\[90vh\]{max-height:90vh}.min-h-screen{min-height:100vh}.w-1\.5{width:.375rem}.w-11{width:2.75rem}.w-2{width:.5rem}.w-2\.5{width:.625rem}.w-24{width:6rem}.w-28{width:7rem}.w-3\.5{width:.875rem}.w-4{width:1rem}.w-5{width:1.25rem}.w-6{width:1.5rem}.w-9{width:2.25rem}.w-full{width:100%}.w-px{width:1px}.min-w-0{min-width:0}.max-w-\[1840px\]{max-width:1840px}.max-w-lg{max-width:32rem}.max-w-md{max-width:28rem}.max-w-xl{max-width:36rem}.flex-1{flex:1 1 0%}.flex-shrink,.shrink{flex-shrink:1}.shrink-0{flex-shrink:0}.transform{transform:translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.cursor-pointer{cursor:pointer}.resize{resize:both}.grid-cols-1{grid-template-columns:repeat(1,minmax(0,1fr))}.grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}.flex-col{flex-direction:column}.flex-wrap{flex-wrap:wrap}.items-start{align-items:flex-start}.items-end{align-items:flex-end}.items-center{align-items:center}.items-baseline{align-items:baseline}.justify-end{justify-content:flex-end}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.gap-1{gap:.25rem}.gap-1\.5{gap:.375rem}.gap-2{gap:.5rem}.gap-2\.5{gap:.625rem}.gap-3{gap:.75rem}.gap-3\.5{gap:.875rem}.gap-4{gap:1rem}.gap-5{gap:1.25rem}.space-y-1>:not([hidden])~:not([hidden]){--tw-space-y-reverse:0;margin-bottom:calc(.25rem*var(--tw-space-y-reverse));margin-top:calc(.25rem*(1 - var(--tw-space-y-reverse)))}.space-y-1\.5>:not([hidden])~:not([hidden]){--tw-space-y-reverse:0;margin-bottom:calc(.375rem*var(--tw-space-y-reverse));margin-top:calc(.375rem*(1 - var(--tw-space-y-reverse)))}.space-y-2>:not([hidden])~:not([hidden]){--tw-space-y-reverse:0;margin-bottom:calc(.5rem*var(--tw-space-y-reverse));margin-top:calc(.5rem*(1 - var(--tw-space-y-reverse)))}.space-y-3>:not([hidden])~:not([hidden]){--tw-space-y-reverse:0;margin-bottom:calc(.75rem*var(--tw-space-y-reverse));margin-top:calc(.75rem*(1 - var(--tw-space-y-reverse)))}.space-y-4>:not([hidden])~:not([hidden]){--tw-space-y-reverse:0;margin-bottom:calc(1rem*var(--tw-space-y-reverse));margin-top:calc(1rem*(1 - var(--tw-space-y-reverse)))}.overflow-hidden{overflow:hidden}.overflow-y-auto{overflow-y:auto}.truncate{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.rounded{border-radius:.25rem}.rounded-full{border-radius:9999px}.rounded-lg{border-radius:.5rem}.rounded-md{border-radius:.375rem}.rounded-xl{border-radius:.75rem}.border{border-width:1px}.border-2{border-width:2px}.border-b{border-bottom-width:1px}.border-t{border-top-width:1px}.border-dashed{border-style:dashed}.border-amber-300\/40{border-color:rgba(252,211,77,.4)}.border-sky-300\/50{border-color:rgb(var(--accent-300)/.5)}.border-sky-400{--tw-border-opacity:1;border-color:rgb(var(--accent-400)/var(--tw-border-opacity,1))}.border-sky-400\/25{border-color:rgb(var(--accent-400)/.25)}.border-sky-400\/30{border-color:rgb(var(--accent-400)/.3)}.border-sky-400\/40{border-color:rgb(var(--accent-400)/.4)}.border-sky-400\/50{border-color:rgb(var(--accent-400)/.5)}.border-transparent{border-color:transparent}.border-white\/10{border-color:hsla(0,0%,100%,.1)}.border-white\/15{border-color:hsla(0,0%,100%,.15)}.border-white\/20{border-color:hsla(0,0%,100%,.2)}.border-white\/25{border-color:hsla(0,0%,100%,.25)}.border-white\/5{border-color:hsla(0,0%,100%,.05)}.bg-amber-400{--tw-bg-opacity:1;background-color:rgb(251 191 36/var(--tw-bg-opacity,1))}.bg-amber-400\/10{background-color:rgba(251,191,36,.1)}.bg-black\/70{background-color:rgba(0,0,0,.7)}.bg-sky-400{--tw-bg-opacity:1;background-color:rgb(var(--accent-400)/var(--tw-bg-opacity,1))}.bg-sky-500{--tw-bg-opacity:1;background-color:rgb(var(--accent-500)/var(--tw-bg-opacity,1))}.bg-sky-500\/10{background-color:rgb(var(--accent-500)/.1)}.bg-sky-500\/15{background-color:rgb(var(--accent-500)/.15)}.bg-sky-500\/20{background-color:rgb(var(--accent-500)/.2)}.bg-sky-500\/25{background-color:rgb(var(--accent-500)/.25)}.bg-slate-800{--tw-bg-opacity:1;background-color:rgb(var(--surface-800)/var(--tw-bg-opacity,1))}.bg-slate-800\/70{background-color:rgb(var(--surface-800)/.7)}.bg-slate-800\/80{background-color:rgb(var(--surface-800)/.8)}.bg-slate-800\/90{background-color:rgb(var(--surface-800)/.9)}.bg-slate-900\/55{background-color:rgb(var(--surface-900)/.55)}.bg-slate-900\/60{background-color:rgb(var(--surface-900)/.6)}.bg-slate-900\/75{background-color:rgb(var(--surface-900)/.75)}.bg-slate-900\/80{background-color:rgb(var(--surface-900)/.8)}.bg-slate-900\/90{background-color:rgb(var(--surface-900)/.9)}.bg-slate-900\/95{background-color:rgb(var(--surface-900)/.95)}.bg-slate-950{--tw-bg-opacity:1;background-color:rgb(var(--surface-950)/var(--tw-bg-opacity,1))}.bg-slate-950\/60{background-color:rgb(var(--surface-950)/.6)}.bg-slate-950\/65{background-color:rgb(var(--surface-950)/.65)}.bg-slate-950\/70{background-color:rgb(var(--surface-950)/.7)}.bg-slate-950\/75{background-color:rgb(var(--surface-950)/.75)}.bg-slate-950\/80{background-color:rgb(var(--surface-950)/.8)}.bg-transparent{background-color:transparent}.bg-white\/10{background-color:hsla(0,0%,100%,.1)}.bg-white\/5{background-color:hsla(0,0%,100%,.05)}.bg-cover{background-size:cover}.bg-center{background-position:50%}.bg-no-repeat{background-repeat:no-repeat}.p-1{padding:.25rem}.p-1\.5{padding:.375rem}.p-10{padding:2.5rem}.p-2{padding:.5rem}.p-2\.5{padding:.625rem}.p-3\.5{padding:.875rem}.p-4{padding:1rem}.p-6{padding:1.5rem}.px-1{padding-left:.25rem;padding-right:.25rem}.px-1\.5{padding-left:.375rem;padding-right:.375rem}.px-2{padding-left:.5rem;padding-right:.5rem}.px-2\.5{padding-left:.625rem;padding-right:.625rem}.px-3{padding-left:.75rem;padding-right:.75rem}.px-3\.5{padding-left:.875rem;padding-right:.875rem}.px-4{padding-left:1rem;padding-right:1rem}.px-5{padding-left:1.25rem;padding-right:1.25rem}.py-0\.5{padding-bottom:.125rem;padding-top:.125rem}.py-1{padding-bottom:.25rem;padding-top:.25rem}.py-1\.5{padding-bottom:.375rem;padding-top:.375rem}.py-2{padding-bottom:.5rem;padding-top:.5rem}.py-2\.5{padding-bottom:.625rem;padding-top:.625rem}.py-3\.5{padding-bottom:.875rem;padding-top:.875rem}.py-4{padding-bottom:1rem;padding-top:1rem}.py-6{padding-bottom:1.5rem;padding-top:1.5rem}.py-8{padding-bottom:2rem;padding-top:2rem}.pb-3{padding-bottom:.75rem}.pr-1{padding-right:.25rem}.pt-0\.5{padding-top:.125rem}.pt-1{padding-top:.25rem}.pt-2{padding-top:.5rem}.pt-3{padding-top:.75rem}.text-left{text-align:left}.text-center{text-align:center}.text-right{text-align:right}.text-2xl{font-size:1.5rem;line-height:2rem}.text-3xl{font-size:1.875rem;line-height:2.25rem}.text-\[10px\]{font-size:10px}.text-\[11px\]{font-size:11px}.text-base{font-size:1rem;line-height:1.5rem}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-sm{font-size:.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-xs{font-size:.75rem;line-height:1rem}.font-black{font-weight:900}.font-bold{font-weight:700}.font-extrabold{font-weight:800}.font-medium{font-weight:500}.font-semibold{font-weight:600}.leading-relaxed{line-height:1.625}.leading-snug{line-height:1.375}.tracking-tight{letter-spacing:-.025em}.text-amber-200{--tw-text-opacity:1;color:rgb(253 230 138/var(--tw-text-opacity,1))}.text-amber-300{--tw-text-opacity:1;color:rgb(252 211 77/var(--tw-text-opacity,1))}.text-sky-100{--tw-text-opacity:1;color:rgb(var(--accent-100)/var(--tw-text-opacity,1))}.text-sky-200{--tw-text-opacity:1;color:rgb(var(--accent-200)/var(--tw-text-opacity,1))}.text-sky-300{--tw-text-opacity:1;color:rgb(var(--accent-300)/var(--tw-text-opacity,1))}.text-slate-100{--tw-text-opacity:1;color:rgb(241 245 249/var(--tw-text-opacity,1))}.text-slate-200{--tw-text-opacity:1;color:rgb(226 232 240/var(--tw-text-opacity,1))}.text-slate-300{--tw-text-opacity:1;color:rgb(203 213 225/var(--tw-text-opacity,1))}.text-slate-400{--tw-text-opacity:1;color:rgb(148 163 184/var(--tw-text-opacity,1))}.text-slate-500{--tw-text-opacity:1;color:rgb(100 116 139/var(--tw-text-opacity,1))}.text-slate-600{--tw-text-opacity:1;color:rgb(71 85 105/var(--tw-text-opacity,1))}.text-slate-950{--tw-text-opacity:1;color:rgb(var(--surface-950)/var(--tw-text-opacity,1))}.text-slate-950\/70{color:rgb(var(--surface-950)/.7)}.text-white{--tw-text-opacity:1;color:rgb(255 255 255/var(--tw-text-opacity,1))}.underline{text-decoration-line:underline}.line-through{text-decoration-line:line-through}.underline-offset-2{text-underline-offset:2px}.placeholder-slate-500::-moz-placeholder{--tw-placeholder-opacity:1;color:rgb(100 116 139/var(--tw-placeholder-opacity,1))}.placeholder-slate-500::placeholder{--tw-placeholder-opacity:1;color:rgb(100 116 139/var(--tw-placeholder-opacity,1))}.accent-sky-500{accent-color:rgb(var(--accent-500)/1)}.opacity-0{opacity:0}.blur{--tw-blur:blur(8px)}.blur,.drop-shadow{filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}.drop-shadow{--tw-drop-shadow:drop-shadow(0 1px 2px rgba(0,0,0,.1)) drop-shadow(0 1px 1px rgba(0,0,0,.06))}.filter{filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}.backdrop-blur-md{--tw-backdrop-blur:blur(12px)}.backdrop-blur-md,.backdrop-blur-sm{-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.backdrop-blur-sm{--tw-backdrop-blur:blur(4px)}.backdrop-filter{-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.transition{transition-duration:.15s;transition-property:color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,-webkit-backdrop-filter;transition-property:color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;transition-property:color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter,-webkit-backdrop-filter;transition-timing-function:cubic-bezier(.4,0,.2,1)}.transition-all{transition-duration:.15s;transition-property:all;transition-timing-function:cubic-bezier(.4,0,.2,1)}.transition-opacity{transition-duration:.15s;transition-property:opacity;transition-timing-function:cubic-bezier(.4,0,.2,1)}.duration-300{transition-duration:.3s}.duration-500{transition-duration:.5s}.duration-700{transition-duration:.7s}.selection\:bg-sky-500 ::-moz-selection{--tw-bg-opacity:1;background-color:rgb(var(--accent-500)/var(--tw-bg-opacity,1))}.selection\:bg-sky-500 ::selection{--tw-bg-opacity:1;background-color:rgb(var(--accent-500)/var(--tw-bg-opacity,1))}.selection\:text-white ::-moz-selection{--tw-text-opacity:1;color:rgb(255 255 255/var(--tw-text-opacity,1))}.selection\:text-white ::selection{--tw-text-opacity:1;color:rgb(255 255 255/var(--tw-text-opacity,1))}.selection\:bg-sky-500::-moz-selection{--tw-bg-opacity:1;background-color:rgb(var(--accent-500)/var(--tw-bg-opacity,1))}.selection\:bg-sky-500::selection{--tw-bg-opacity:1;background-color:rgb(var(--accent-500)/var(--tw-bg-opacity,1))}.selection\:text-white::-moz-selection{--tw-text-opacity:1;color:rgb(255 255 255/var(--tw-text-opacity,1))}.selection\:text-white::selection{--tw-text-opacity:1;color:rgb(255 255 255/var(--tw-text-opacity,1))}.hover\:scale-110:hover{--tw-scale-x:1.1;--tw-scale-y:1.1;transform:translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.hover\:border-sky-400:hover{--tw-border-opacity:1;border-color:rgb(var(--accent-400)/var(--tw-border-opacity,1))}.hover\:bg-amber-300:hover{--tw-bg-opacity:1;background-color:rgb(252 211 77/var(--tw-bg-opacity,1))}.hover\:bg-sky-400:hover{--tw-bg-opacity:1;background-color:rgb(var(--accent-400)/var(--tw-bg-opacity,1))}.hover\:bg-sky-500\/30:hover{background-color:rgb(var(--accent-500)/.3)}.hover\:bg-slate-700:hover{--tw-bg-opacity:1;background-color:rgb(var(--surface-700)/var(--tw-bg-opacity,1))}.hover\:bg-slate-700\/80:hover{background-color:rgb(var(--surface-700)/.8)}.hover\:bg-slate-900\/90:hover{background-color:rgb(var(--surface-900)/.9)}.hover\:bg-white\/10:hover{background-color:hsla(0,0%,100%,.1)}.hover\:bg-white\/5:hover{background-color:hsla(0,0%,100%,.05)}.hover\:text-sky-300:hover{--tw-text-opacity:1;color:rgb(var(--accent-300)/var(--tw-text-opacity,1))}.hover\:text-slate-200:hover{--tw-text-opacity:1;color:rgb(226 232 240/var(--tw-text-opacity,1))}.hover\:text-white:hover{--tw-text-opacity:1;color:rgb(255 255 255/var(--tw-text-opacity,1))}.focus\:border-sky-400:focus{--tw-border-opacity:1;border-color:rgb(var(--accent-400)/var(--tw-border-opacity,1))}.focus\:border-sky-400\/60:focus{border-color:rgb(var(--accent-400)/.6)}.focus\:text-white:focus{--tw-text-opacity:1;color:rgb(255 255 255/var(--tw-text-opacity,1))}.focus\:outline-none:focus{outline:2px solid transparent;outline-offset:2px}.group:hover .group-hover\:opacity-100{opacity:1}@media (min-width:640px){.sm\:col-span-2{grid-column:span 2/span 2}.sm\:block{display:block}.sm\:grid-cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}.sm\:p-5{padding:1.25rem}.sm\:px-6{padding-left:1.5rem;padding-right:1.5rem}.sm\:text-3xl{font-size:1.875rem;line-height:2.25rem}.sm\:text-4xl{font-size:2.25rem;line-height:2.5rem}}@media (min-width:768px){.md\:block{display:block}}@media (min-width:1024px){.lg\:flex{display:flex}.lg\:px-8{padding-left:2rem;padding-right:2rem}}</style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --glass-blur: 16px;
+      --bg-dim: 0.55;
+      --accent-50: 240 249 255;
+      --accent-100: 224 242 254;
+      --accent-200: 186 230 253;
+      --accent-300: 125 211 252;
+      --accent-400: 56 189 248;
+      --accent-500: 14 165 233;
+      --accent-600: 2 132 199;
+      --accent-700: 3 105 161;
+      --accent-800: 7 89 133;
+      --accent-900: 12 74 110;
+      --accent-950: 8 47 73;
+      --surface-700: 51 65 85;
+      --surface-800: 30 41 59;
+      --surface-900: 15 23 42;
+      --surface-950: 2 6 23;
+      --panel-alpha: 0.72;
+    }
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Microsoft YaHei", sans-serif;
+      user-select: none;
+      overflow-x: hidden;
+    }
+    .font-mono-num {
+      font-family: 'JetBrains Mono', monospace;
+      font-variant-numeric: tabular-nums;
+    }
+    .glass-panel {
+      background: rgb(var(--surface-900) / var(--panel-alpha));
+      backdrop-filter: blur(var(--glass-blur));
+      -webkit-backdrop-filter: blur(var(--glass-blur));
+      border: 1px solid rgba(255, 255, 255, 0.12);
+    }
+    .glass-card {
+      background: rgb(var(--surface-900) / calc(var(--panel-alpha) - 0.04));
+      backdrop-filter: blur(var(--glass-blur));
+      -webkit-backdrop-filter: blur(var(--glass-blur));
+      border: 1px solid rgba(255, 255, 255, 0.12);
+    }
+    .glass-card:hover {
+      border-color: rgba(255, 255, 255, 0.24);
+    }
+    /* Due reminder: flat amber tint, no animation */
+    .card-alert-active {
+      background: linear-gradient(rgba(251, 191, 36, 0.11), rgba(251, 191, 36, 0.11)), rgb(var(--surface-900) / var(--panel-alpha)) !important;
+      border-color: rgba(252, 211, 77, 0.6) !important;
+    }
+    .alert-icon {
+      display: inline-block;
+      flex-shrink: 0;
+    }
+    .focused-card-glow {
+      background: linear-gradient(rgb(var(--accent-500) / 0.14), rgb(var(--accent-500) / 0.14)), rgb(var(--surface-900) / var(--panel-alpha)) !important;
+      border-color: rgb(var(--accent-400) / 0.7) !important;
+    }
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: rgba(15, 23, 42, 0.3);
+    }
+    ::-webkit-scrollbar-thumb {
+      background: rgba(148, 163, 184, 0.3);
+      border-radius: 9999px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: rgba(148, 163, 184, 0.5);
+    }
+    /* Compact view: fade and collapse non-essential controls (toggled by clicking the top bar) */
+    .idle-fx {
+      transition:
+        opacity 0.5s ease,
+        transform 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+        max-width 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+        max-height 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+        margin 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+        padding 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+        border-width 0.7s ease;
+    }
+    .idle-fx-x {
+      max-width: 24rem;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+    .idle-fx-y {
+      max-height: 8rem;
+      overflow: hidden;
+    }
+    body.ui-compact .idle-fx:not(.is-expanded .idle-fx) {
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(-4px);
+    }
+    body.ui-compact .idle-fx-x:not(.is-expanded .idle-fx-x) {
+      max-width: 0;
+      margin-left: 0;
+      margin-right: 0;
+      padding-left: 0;
+      padding-right: 0;
+      border-width: 0;
+    }
+    body.ui-compact .idle-fx-y:not(.is-expanded .idle-fx-y) {
+      max-height: 0;
+      margin-top: 0;
+      margin-bottom: 0;
+      padding-top: 0;
+      padding-bottom: 0;
+      border-width: 0;
+    }
+    #hud-clock,
+    #hud-date {
+      transition: font-size 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    body.ui-compact #hud-clock {
+      font-size: 3rem;
+      line-height: 1;
+    }
+    /* Compact top bar: shrink padding so the bar hugs the clock */
+    #app-header {
+      transition: padding 0.7s cubic-bezier(0.16, 1, 0.3, 1), row-gap 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    body.ui-compact #app-header {
+      padding-top: 1rem;
+      padding-bottom: 1.375rem;
+      row-gap: 0;
+    }
+    /* Compact view hides the status/filter bar; pull the cards up over the freed gap */
+    body.ui-compact #sub-toolbar {
+      margin-top: -1rem;
+    }
+    /* Compact top bar: close the spacing left by the hidden title so the clock sits flush left */
+    #header-left {
+      transition: column-gap 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    body.ui-compact #header-left {
+      column-gap: 0;
+    }
+    /* Collapsed rows inside spaced stacks: drop the stack margin too (beats Tailwind space-y specificity) */
+    body.ui-compact .space-y-2 > .idle-fx-y:not(.is-expanded .idle-fx-y),
+    body.ui-compact .space-y-3 > .idle-fx-y:not(.is-expanded .idle-fx-y) {
+      margin-top: 0;
+    }
+    /* Compact cards: cancel the card's inner gap above the collapsed footer */
+    body.ui-compact .card-footer:not(.is-expanded .card-footer) {
+      margin-top: -0.875rem;
+    }
+    /* Masonry layout: independent columns, cards stacked with a fixed gap (no row alignment) */
+    #tasks-container.masonry {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+    #tasks-container.masonry.masonry-hud {
+      gap: 1.25rem;
+    }
+    .masonry-col {
+      flex: 1 1 0%;
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .masonry-hud .masonry-col {
+      gap: 1.25rem;
+    }
+    /* Drag to reorder */
+    #tasks-container.can-drag article[data-task-id] {
+      cursor: grab;
+    }
+    body.is-drag-active,
+    body.is-drag-active * {
+      cursor: grabbing !important;
+    }
+    .drag-placeholder {
+      flex-shrink: 0;
+      border: 2px dashed rgb(var(--accent-400) / 0.5);
+      border-radius: 0.75rem;
+      background: rgb(var(--accent-500) / 0.07);
+    }
+    article.is-dragging {
+      will-change: translate, scale;
+    }
+    body.ui-compact #hud-date {
+      font-size: 0.95rem;
+    }
+  </style>
+</head>
+<body class="min-h-screen text-slate-100 relative selection:bg-sky-500 selection:text-white">
+
+  <!-- Hidden preloaded image storage for built-in AI wallpapers (inlined at build time) -->
+  <div class="hidden" aria-hidden="true">
+    <img id="preset-img-mountain" src="assets/aurora-peaks.jpg" alt="Aurora Peaks wallpaper" />
+    <img id="preset-img-zen" src="assets/rainy-temple.jpg" alt="Rainy Temple wallpaper" />
+  </div>
+
+  <!-- Dynamic Wallpaper Layer -->
+  <div id="wallpaper-layer" class="fixed inset-0 -z-20 bg-cover bg-center bg-no-repeat transition-all duration-700" style="background-color: #090d16;"></div>
+  <!-- Adjustable Dimming & Vignette Layer -->
+  <div id="dim-layer" class="fixed inset-0 -z-10 transition-opacity duration-300" style="background: radial-gradient(circle at center, rgba(9, 13, 22, 0.45) 0%, rgba(5, 8, 15, 0.85) 100%); opacity: 0.6;"></div>
+
+  <!-- Main App Container -->
+  <div class="min-h-screen flex flex-col max-w-[1840px] mx-auto px-4 sm:px-6 lg:px-8 py-4 gap-4">
+
+    <!-- Top Secondary-Screen HUD Header -->
+    <header id="app-header" class="glass-panel rounded-xl px-5 py-3.5 flex flex-wrap items-center justify-between gap-4 cursor-pointer" data-i18n-title="hud.compactHint" title="Click a blank area to toggle compact view">
+      <!-- Left: Brand + Secondary Screen Live Clock -->
+      <div id="header-left" class="flex items-center gap-5">
+        <div class="idle-fx idle-fx-x flex items-center gap-3">
+          <div class="w-11 h-11 rounded-lg bg-sky-500 flex items-center justify-center">
+            <svg class="w-6 h-6 text-slate-950" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+          <div>
+            <div class="flex items-center gap-2">
+              <h1 class="text-lg font-bold tracking-tight text-white">PulseDesk</h1>
+              <span id="app-version" class="px-1.5 py-0.5 rounded-md text-[10px] font-semibold font-mono-num bg-white/10 text-slate-300 border border-white/10">v12</span>
+            </div>
+            <p class="text-xs text-slate-400" data-i18n="app.subtitle">Multi-project reminders</p>
+          </div>
+        </div>
+
+        <div class="idle-fx idle-fx-x h-8 w-px bg-white/10 hidden sm:block"></div>
+
+        <!-- Live Clock & Date -->
+        <div class="flex items-baseline gap-3">
+          <div id="hud-clock" class="text-2xl sm:text-3xl font-extrabold font-mono-num tracking-tight text-white">12:00:00</div>
+          <div id="hud-date" class="text-xs text-slate-300 font-medium hidden md:block">Wed, Oct 21</div>
+        </div>
+
+      </div>
+
+      <!-- Center: Current Deep-Work Project Indicator & Anti-Immersion Guard -->
+      <div class="idle-fx idle-fx-y flex items-center gap-3 bg-white/5 border border-white/10 rounded-lg px-3.5 py-2">
+        <span class="flex h-2.5 w-2.5 relative">
+          <span class="relative inline-flex rounded-full h-2 w-2 bg-sky-400"></span>
+        </span>
+        <div class="text-xs">
+          <span class="text-slate-400" data-i18n="hud.focus">Focus: </span>
+          <span id="hud-active-project" class="font-semibold text-sky-300">AI Agent Gateway Refactor</span>
+          <span class="mx-1.5 text-slate-600">|</span>
+          <span class="text-slate-400" data-i18n="hud.time">Time </span>
+          <span id="hud-focus-duration" class="font-mono-num font-semibold text-slate-100">00:00</span>
+        </div>
+        <button id="btn-Rotate-focus" type="button" data-i18n="hud.next" data-i18n-title="hud.nextTitle" title="Next project" class="ml-1 px-2 py-1 rounded-lg bg-sky-500/20 hover:bg-sky-500/30 text-sky-300 text-xs font-medium border border-sky-400/25 transition">
+          Next         </button>
+      </div>
+
+      <!-- Right: Action Toolbar -->
+      <div class="idle-fx idle-fx-y flex flex-wrap items-center gap-2">
+        <!-- New Project Task Button -->
+        <button id="btn-open-new-task" type="button" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-sky-500 hover:bg-sky-400 text-slate-950 font-semibold text-xs transition">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
+          <span data-i18n="btn.newProject">New Project</span>
+        </button>
+
+        <!-- Global Patrol Settings Button -->
+        <button id="btn-open-global-timer" type="button" class="inline-flex items-center gap-1.5 px-3 py-2 rounded-lg bg-slate-800/80 hover:bg-slate-700/80 text-slate-200 text-xs font-medium border border-white/10 transition">
+          <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          <span id="global-mode-label">Timers</span>
+        </button>
+
+        <!-- View Switcher (Grid vs List vs Zen HUD) -->
+        <div class="inline-flex rounded-lg bg-slate-900/80 p-1 border border-white/10">
+          <button id="btn-view-grid" type="button" class="px-2.5 py-1 rounded-lg text-xs font-medium bg-sky-500/20 text-sky-300 transition" title="Card view" data-i18n="view.cards" data-i18n-title="view.cardsTitle">
+            Cards
+          </button>
+          <button id="btn-view-list" type="button" class="px-2.5 py-1 rounded-lg text-xs font-medium text-slate-400 hover:text-slate-200 transition" title="List view" data-i18n="view.list" data-i18n-title="view.listTitle">
+            List
+          </button>
+          <button id="btn-view-hud" type="button" class="px-2.5 py-1 rounded-lg text-xs font-medium text-slate-400 hover:text-slate-200 transition" title="Large-text view" data-i18n="view.hud" data-i18n-title="view.hudTitle">
+            HUD
+          </button>
+        </div>
+
+        <!-- Wallpaper & Appearance Modal Trigger -->
+        <button id="btn-open-wallpaper" type="button" class="inline-flex items-center gap-1.5 px-3 py-2 rounded-lg bg-slate-800/80 hover:bg-slate-700/80 text-slate-200 text-xs font-medium border border-white/10 transition" title="Wallpaper, colors and panels" data-i18n-title="btn.themeTitle">
+          <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+          <span data-i18n="btn.theme">Theme</span>
+        </button>
+
+        <!-- Sound Toggle -->
+        <button id="btn-toggle-sound" type="button" class="p-2 rounded-lg bg-slate-800/80 hover:bg-slate-700/80 text-slate-200 border border-white/10 transition" title="Sound" data-i18n-title="btn.soundTitle">
+          <svg id="icon-sound-on" class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"/></svg>
+          <svg id="icon-sound-off" class="w-4 h-4 hidden text-slate-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15zM17 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2"/></svg>
+        </button>
+
+        <!-- Language Toggle -->
+        <button id="btn-toggle-lang" type="button" class="px-2.5 py-2 rounded-lg bg-slate-800/80 hover:bg-slate-700/80 text-slate-200 text-xs font-semibold border border-white/10 transition" data-i18n="lang.switch" data-i18n-title="lang.title">EN</button>
+
+        <!-- Fullscreen Toggle -->
+        <button id="btn-fullscreen" type="button" class="inline-flex items-center gap-1.5 px-3 py-2 rounded-lg bg-slate-800/80 hover:bg-slate-700/80 text-slate-200 text-xs font-medium border border-white/10 transition" title="Fullscreen (F11)" data-i18n-title="btn.fullscreenTitle">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"/></svg>
+          <span id="fullscreen-label">Fullscreen</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Secondary Control & Filter Bar -->
+    <section id="sub-toolbar" class="idle-fx idle-fx-y glass-panel rounded-lg px-4 py-2.5 flex flex-wrap items-center justify-between gap-3 text-xs">
+      <!-- Filter Tabs -->
+      <div class="flex flex-wrap items-center gap-2">
+        <span class="idle-fx idle-fx-x text-slate-400 font-medium" data-i18n="filter.label">Filter:</span>
+        <button type="button" data-filter="all" class="filter-btn px-3 py-1 rounded-lg font-semibold bg-sky-500/20 text-sky-300 border border-sky-400/30 transition">
+          <span data-i18n="filter.all">All</span> (<span id="count-all">0</span>)
+        </button>
+        <button type="button" data-filter="alerting" class="filter-btn px-3 py-1 rounded-lg font-medium text-slate-300 hover:bg-white/5 border border-transparent transition">
+          <span data-i18n="filter.due">Due</span> (<span id="count-alerting" class="text-amber-300 font-semibold">0</span>)
+        </button>
+        <button type="button" data-filter="active" class="filter-btn px-3 py-1 rounded-lg font-medium text-slate-300 hover:bg-white/5 border border-transparent transition">
+          <span data-i18n="filter.running">Running</span> (<span id="count-active">0</span>)
+        </button>
+        <button type="button" data-filter="paused" class="filter-btn px-3 py-1 rounded-lg font-medium text-slate-300 hover:bg-white/5 border border-transparent transition">
+          <span data-i18n="filter.paused">Paused</span> (<span id="count-paused">0</span>)
+        </button>
+        <button type="button" data-filter="completed" class="filter-btn px-3 py-1 rounded-lg font-medium text-slate-300 hover:bg-white/5 border border-transparent transition">
+          <span data-i18n="filter.done">Done</span> (<span id="count-completed">0</span>)
+        </button>
+      </div>
+
+      <!-- Quick Batch Operations & Anti-Tunnel-Vision Tools -->
+      <div class="idle-fx flex flex-wrap items-center gap-2">
+        <div class="hidden lg:flex items-center gap-1.5 text-slate-300 bg-slate-900/60 px-2.5 py-1 rounded-lg border border-white/10">
+          <span class="w-1.5 h-1.5 rounded-full bg-sky-400"></span>
+          <span data-i18n="stats.checksToday">Checks today:</span>
+          <span id="today-check-count" class="font-mono-num font-semibold text-slate-100">0</span>
+        </div>
+
+        <button id="btn-checkin-repeating" type="button" class="px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 border border-white/10 font-medium transition" title="Check in every repeating project" data-i18n="btn.checkInRepeating" data-i18n-title="btn.checkInRepeatingTitle">Check in repeating</button>
+        <button id="btn-checkin-all" type="button" class="px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 border border-white/10 font-medium transition" title="Check in every project" data-i18n="btn.checkInAll" data-i18n-title="btn.checkInAllTitle">Check in all</button>
+
+        <button id="btn-trigger-demo-alert" type="button" class="px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 border border-white/10 font-medium transition" title="Trigger a test alert" data-i18n="btn.testAlert" data-i18n-title="btn.testAlertTitle">
+          Test Alert
+        </button>
+
+        <button id="btn-reset-all-timers" type="button" data-i18n="btn.resetAll" class="px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 border border-white/10 font-medium transition">
+          Reset All
+        </button>
+
+        <button id="btn-open-stats" type="button" data-i18n="btn.stats" class="px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 border border-white/10 font-medium transition">
+          Stats
+        </button>
+
+        <button id="btn-open-log-drawer" type="button" data-i18n="btn.log" class="px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 border border-white/10 font-medium transition">
+          Log
+        </button>
+      </div>
+    </section>
+
+    <!-- Main Tasks Display Container -->
+    <main class="flex-1">
+      <div id="tasks-container" class="masonry">
+        <!-- Populated dynamically via JS -->
+      </div>
+    </main>
+
+    <!-- Subtle Footer Status Bar -->
+    <footer class="idle-fx idle-fx-y glass-panel rounded-lg px-4 py-2 text-[11px] text-slate-400 flex flex-wrap items-center justify-between gap-2">
+      <div class="flex items-center gap-4">
+        <span data-i18n="footer.privacy">Your data stays in this browser only. Use Export to back it up.</span>
+      </div>
+      <div class="flex items-center gap-3">
+        <button id="btn-export-json" type="button" class="hover:text-sky-300 underline underline-offset-2 transition" data-i18n="footer.export">Export</button>
+        <label class="hover:text-sky-300 underline underline-offset-2 cursor-pointer transition">
+          <span data-i18n="footer.import">Import</span>
+          <input id="input-import-json" type="file" accept=".json,application/json" class="hidden" />
+        </label>
+        <button id="btn-reset-demo" type="button" class="hover:text-sky-300 underline underline-offset-2 transition" data-i18n="footer.resetDemo">Reset Demo</button>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- ==========================================
+       MODAL 1: CREATE / EDIT PROJECT CARD
+       ========================================== -->
+  <div id="modal-task" class="fixed inset-0 z-50 hidden bg-black/70 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="glass-panel rounded-xl max-w-lg w-full p-6 border border-white/10 text-slate-100 max-h-[90vh] overflow-y-auto">
+      <div class="flex items-center justify-between pb-3 border-b border-white/10">
+        <h2 id="modal-task-title" class="text-base font-bold text-white">New Project</h2>
+        <button id="btn-close-task-modal" type="button" class="text-slate-400 hover:text-white p-1 rounded-lg"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+      </div>
+
+      <form id="form-task" class="mt-4 space-y-4 text-xs">
+        <input type="hidden" id="task-id-input" />
+
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+          <div class="sm:col-span-2">
+            <label class="block text-slate-300 font-semibold mb-1" data-i18n="f.name">Name *</label>
+            <input id="task-name-input" type="text" required placeholder="e.g. Trading service load test" data-i18n-placeholder="f.namePh" class="w-full px-3 py-2 rounded-lg bg-slate-900/90 border border-white/15 text-slate-100 focus:outline-none focus:border-sky-400" />
+          </div>
+          <div>
+            <label class="block text-slate-300 font-semibold mb-1" data-i18n="f.tag">Tag</label>
+            <input id="task-tag-input" type="text" placeholder="e.g. Ops" data-i18n-placeholder="f.tagPh" class="w-full px-3 py-2 rounded-lg bg-slate-900/90 border border-white/15 text-slate-100 focus:outline-none focus:border-sky-400" />
+          </div>
+        </div>
+
+        <div>
+            <label class="block text-slate-300 font-semibold mb-1" data-i18n="f.reminder">Reminder</label>
+            <select id="task-reminder-type" class="w-full px-3 py-2 rounded-lg bg-slate-900/90 border border-white/15 text-slate-100 focus:outline-none focus:border-sky-400">
+              <option value="loop" data-i18n="opt.loop">Repeat (every N min)</option>
+              <option value="scheduled" data-i18n="opt.scheduled">Daily (at HH:MM)</option>
+            </select>
+        </div>
+
+        <!-- Loop Interval Setting -->
+        <div id="group-loop-setting" class="bg-slate-900/60 p-3.5 rounded-lg border border-white/10 space-y-2">
+          <label class="block text-slate-300 font-semibold" data-i18n="f.interval">Interval (min)</label>
+          <div class="flex items-center gap-2">
+            <input id="task-interval-input" type="number" min="1" max="480" value="30" class="w-28 px-3 py-1.5 rounded-lg bg-slate-950 border border-white/15 text-slate-100 font-mono-num" />
+            <div class="flex flex-wrap gap-1.5">
+              <button type="button" data-quick-min="10" class="quick-min-btn px-2 py-1 rounded bg-slate-800 hover:bg-slate-700 text-slate-300">10m</button>
+              <button type="button" data-quick-min="15" class="quick-min-btn px-2 py-1 rounded bg-slate-800 hover:bg-slate-700 text-slate-300">15m</button>
+              <button type="button" data-quick-min="25" class="quick-min-btn px-2 py-1 rounded bg-slate-800 hover:bg-slate-700 text-slate-300">25m</button>
+              <button type="button" data-quick-min="30" class="quick-min-btn px-2 py-1 rounded bg-slate-800 hover:bg-slate-700 text-slate-300">30m</button>
+              <button type="button" data-quick-min="45" class="quick-min-btn px-2 py-1 rounded bg-slate-800 hover:bg-slate-700 text-slate-300">45m</button>
+              <button type="button" data-quick-min="60" class="quick-min-btn px-2 py-1 rounded bg-slate-800 hover:bg-slate-700 text-slate-300">60m</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Scheduled Time Setting -->
+        <div id="group-scheduled-setting" class="hidden bg-slate-900/60 p-3.5 rounded-lg border border-white/10 space-y-2">
+          <label class="block text-slate-300 font-semibold" data-i18n="f.time">Time (HH:MM)</label>
+          <input id="task-scheduled-input" type="time" value="15:00" class="px-3 py-1.5 rounded-lg bg-slate-950 border border-white/15 text-slate-100 font-mono-num" />
+        </div>
+
+        <!-- Context Breadcrumb Note -->
+        <div>
+          <label class="block text-slate-300 font-semibold mb-1" data-i18n="f.note">Note</label>
+          <input id="task-note-input" type="text" placeholder="e.g. Check Jenkins #88 for errors" data-i18n-placeholder="f.notePh" class="w-full px-3 py-2 rounded-lg bg-slate-900/90 border border-white/15 text-slate-100 focus:outline-none focus:border-sky-400" />
+        </div>
+
+        <!-- Initial Subtasks (multiline in modal) -->
+        <div>
+          <label class="block text-slate-300 font-semibold mb-1" data-i18n="f.subtasks">Subtasks (one per line)</label>
+          <textarea id="task-subtasks-input" rows="4" placeholder="Check API P99 latency&#10;Review DB migration script&#10;Post update to team" data-i18n-placeholder="f.subtasksPh" class="w-full px-3 py-2 rounded-lg bg-slate-900/90 border border-white/15 text-slate-100 focus:outline-none focus:border-sky-400"></textarea>
+        </div>
+
+        <div class="flex items-center justify-end gap-2 pt-3 border-t border-white/10">
+          <button id="btn-cancel-task-modal" type="button" class="px-4 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 font-medium" data-i18n="btn.cancel">Cancel</button>
+          <button type="submit" class="px-5 py-2 rounded-lg bg-sky-500 hover:bg-sky-400 text-slate-950 font-bold " data-i18n="btn.save">Save</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ==========================================
+       MODAL 2: GLOBAL REMINDER & SOUND SETTINGS
+       ========================================== -->
+  <div id="modal-global" class="fixed inset-0 z-50 hidden bg-black/70 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="glass-panel rounded-xl max-w-md w-full p-6 border border-white/10 text-slate-100 space-y-4 text-xs">
+      <div class="flex items-center justify-between pb-3 border-b border-white/10">
+        <h2 class="text-base font-bold text-white" data-i18n="g.title">Global Settings</h2>
+        <button id="btn-close-global-modal" type="button" class="text-slate-400 hover:text-white p-1 rounded-lg"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+      </div>
+
+      <!-- Global Override Switch -->
+      <div class="bg-slate-900/75 p-4 rounded-lg border border-white/10 space-y-3">
+        <div class="flex items-center justify-between">
+          <div>
+            <div class="font-bold text-slate-100 text-sm" data-i18n="g.useGlobal">Use global interval</div>
+          </div>
+          <input id="toggle-global-override" type="checkbox" class="w-5 h-5 accent-sky-500 rounded cursor-pointer" />
+        </div>
+
+        <div class="pt-2 border-t border-white/10 flex items-center justify-between gap-2">
+          <label class="text-slate-300 font-semibold" data-i18n="g.interval">Interval (min):</label>
+          <input id="input-global-interval" type="number" min="1" max="240" value="25" class="w-24 px-3 py-1.5 rounded-lg bg-slate-950 border border-white/15 text-slate-100 font-mono-num text-center" />
+        </div>
+
+        <button id="btn-apply-global-to-all" type="button" data-i18n="g.apply" class="w-full py-2 rounded-lg bg-sky-500/20 hover:bg-sky-500/30 text-sky-300 border border-sky-400/30 font-semibold transition">
+          Apply to All
+        </button>
+      </div>
+
+      <!-- Peripheral Vision & Sound Options -->
+      <div class="bg-slate-900/75 p-4 rounded-lg border border-white/10 space-y-3">
+        <div class="flex items-center justify-between">
+          <div class="font-semibold text-slate-200" data-i18n="g.keepAwake">Keep screen on in fullscreen</div>
+          <input id="toggle-keep-awake" type="checkbox" checked class="w-4 h-4 accent-sky-500 rounded cursor-pointer" />
+        </div>
+
+        <div class="flex items-center justify-between pt-3 border-t border-white/10">
+          <label class="font-semibold text-slate-200" data-i18n="g.sound">Sound</label>
+          <div class="flex items-center gap-2">
+            <select id="select-sound-style" class="px-2.5 py-1.5 rounded-lg bg-slate-950 border border-white/15 text-slate-100">
+              <option value="chime" data-i18n="opt.chime">Chime</option>
+              <option value="bowl" data-i18n="opt.bowl">Singing Bowl</option>
+              <option value="radar" data-i18n="opt.radar">Radar</option>
+            </select>
+            <button id="btn-test-sound" type="button" class="px-2.5 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-sky-300 border border-white/10" data-i18n="btn.test">Test</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex justify-end pt-2">
+        <button id="btn-save-global-modal" type="button" data-i18n="btn.done" class="px-5 py-2 rounded-lg bg-sky-500 hover:bg-sky-400 text-slate-950 font-bold">Done</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================
+       MODAL 3: WALLPAPER & APPEARANCE CUSTOMIZER
+       ========================================== -->
+  <div id="modal-wallpaper" class="fixed inset-0 z-50 hidden bg-black/70 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="glass-panel rounded-xl max-w-xl w-full p-6 border border-white/10 text-slate-100 space-y-4 text-xs">
+      <div class="flex items-center justify-between pb-3 border-b border-white/10">
+        <h2 class="text-base font-bold text-white" data-i18n="a.title">Appearance</h2>
+        <button id="btn-close-wallpaper-modal" type="button" class="text-slate-400 hover:text-white p-1 rounded-lg"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+      </div>
+
+      <!-- Preset Wallpapers -->
+      <div class="space-y-2">
+        <label class="block text-slate-300 font-semibold" data-i18n="a.wallpaper">Wallpaper</label>
+        <div class="grid grid-cols-2 sm:grid-cols-3 gap-2.5">
+          <button type="button" data-bg-preset="mountain" class="bg-preset-btn group relative h-20 rounded-lg overflow-hidden border-2 border-sky-400 text-left p-2 flex items-end">
+            <span class="relative z-10 font-semibold text-white drop-shadow" data-i18n="wp.mountain">Aurora Peaks</span>
+          </button>
+          <button type="button" data-bg-preset="zen" class="bg-preset-btn group relative h-20 rounded-lg overflow-hidden border-2 border-white/15 text-left p-2 flex items-end">
+            <span class="relative z-10 font-semibold text-white drop-shadow" data-i18n="wp.zen">Rainy Temple</span>
+          </button>
+          <button type="button" data-bg-preset="nebula" class="bg-preset-btn h-20 rounded-lg border-2 border-white/15 p-2 flex items-end" style="background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #0f172a 100%);">
+            <span class="font-semibold text-white" data-i18n="wp.nebula">Nebula</span>
+          </button>
+          <button type="button" data-bg-preset="obsidian" class="bg-preset-btn h-20 rounded-lg border-2 border-white/15 p-2 flex items-end" style="background: radial-gradient(circle at top right, #1e293b, #090d16 70%);">
+            <span class="font-semibold text-white" data-i18n="wp.obsidian">Obsidian</span>
+          </button>
+          <button type="button" data-bg-preset="emerald" class="bg-preset-btn h-20 rounded-lg border-2 border-white/15 p-2 flex items-end" style="background: linear-gradient(135deg, #052e16 0%, #0f172a 60%, #022c22 100%);">
+            <span class="font-semibold text-white" data-i18n="wp.emerald">Cyber Pine</span>
+          </button>
+          <label class="h-20 rounded-lg border-2 border-dashed border-sky-400/50 hover:border-sky-400 bg-sky-500/10 p-2 flex flex-col items-center justify-center cursor-pointer transition text-center">
+            <span class="font-bold text-sky-300" data-i18n="a.upload">+ Upload</span>
+            <span class="text-[10px] text-slate-400 mt-0.5">JPG/PNG/WebP</span>
+            <input id="input-local-wallpaper" type="file" accept="image/*" class="hidden" />
+          </label>
+        </div>
+      </div>
+
+      <!-- Theme Color -->
+      <div class="space-y-2">
+        <label class="block text-slate-300 font-semibold" data-i18n="a.themeColor">Theme color</label>
+        <div class="flex flex-wrap items-center gap-3">
+          <button type="button" data-accent="sky" class="accent-swatch w-9 h-9 rounded-md border-2 border-white/20 transition hover:scale-110" style="background: rgb(14 165 233);" title="Sky" data-i18n-title="accent.sky"></button>
+          <button type="button" data-accent="indigo" class="accent-swatch w-9 h-9 rounded-md border-2 border-white/20 transition hover:scale-110" style="background: rgb(99 102 241);" title="Indigo" data-i18n-title="accent.indigo"></button>
+          <button type="button" data-accent="violet" class="accent-swatch w-9 h-9 rounded-md border-2 border-white/20 transition hover:scale-110" style="background: rgb(139 92 246);" title="Violet" data-i18n-title="accent.violet"></button>
+          <button type="button" data-accent="teal" class="accent-swatch w-9 h-9 rounded-md border-2 border-white/20 transition hover:scale-110" style="background: rgb(20 184 166);" title="Teal" data-i18n-title="accent.teal"></button>
+          <button type="button" data-accent="orange" class="accent-swatch w-9 h-9 rounded-md border-2 border-white/20 transition hover:scale-110" style="background: rgb(249 115 22);" title="Orange" data-i18n-title="accent.orange"></button>
+          <button type="button" data-accent="pink" class="accent-swatch w-9 h-9 rounded-md border-2 border-white/20 transition hover:scale-110" style="background: rgb(236 72 153);" title="Pink" data-i18n-title="accent.pink"></button>
+        </div>
+      </div>
+
+      <!-- Panel Color -->
+      <div class="space-y-2">
+        <label class="block text-slate-300 font-semibold" data-i18n="a.panelColor">Panel color</label>
+        <div class="flex flex-wrap items-center gap-3">
+          <button type="button" data-surface="slate" class="surface-swatch w-9 h-9 rounded-lg border-2 border-white/25 transition hover:scale-110" style="background: rgb(51 65 85);" title="Slate" data-i18n-title="surface.slate"></button>
+          <button type="button" data-surface="zinc" class="surface-swatch w-9 h-9 rounded-lg border-2 border-white/25 transition hover:scale-110" style="background: rgb(63 63 70);" title="Graphite" data-i18n-title="surface.zinc"></button>
+          <button type="button" data-surface="stone" class="surface-swatch w-9 h-9 rounded-lg border-2 border-white/25 transition hover:scale-110" style="background: rgb(68 64 60);" title="Warm Gray" data-i18n-title="surface.stone"></button>
+          <button type="button" data-surface="navy" class="surface-swatch w-9 h-9 rounded-lg border-2 border-white/25 transition hover:scale-110" style="background: rgb(37 52 102);" title="Navy" data-i18n-title="surface.navy"></button>
+          <button type="button" data-surface="forest" class="surface-swatch w-9 h-9 rounded-lg border-2 border-white/25 transition hover:scale-110" style="background: rgb(38 70 58);" title="Forest" data-i18n-title="surface.forest"></button>
+          <button type="button" data-surface="plum" class="surface-swatch w-9 h-9 rounded-lg border-2 border-white/25 transition hover:scale-110" style="background: rgb(76 45 82);" title="Plum" data-i18n-title="surface.plum"></button>
+        </div>
+      </div>
+
+      <!-- Sliders for Dimming & Blur -->
+      <div class="bg-slate-900/75 p-4 rounded-lg border border-white/10 space-y-3">
+        <div>
+          <div class="flex justify-between mb-1">
+            <span class="text-slate-300 font-semibold" data-i18n="a.dim">Dim</span>
+            <span id="label-dim-value" class="font-mono-num text-sky-300">60%</span>
+          </div>
+          <input id="slider-bg-dim" type="range" min="15" max="90" value="60" class="w-full accent-sky-500 cursor-pointer" />
+        </div>
+        <div>
+          <div class="flex justify-between mb-1">
+            <span class="text-slate-300 font-semibold" data-i18n="a.blur">Blur</span>
+            <span id="label-blur-value" class="font-mono-num text-sky-300">16px</span>
+          </div>
+          <input id="slider-glass-blur" type="range" min="0" max="32" value="16" class="w-full accent-sky-500 cursor-pointer" />
+        </div>
+        <div>
+          <div class="flex justify-between mb-1">
+            <span class="text-slate-300 font-semibold" data-i18n="a.panelOpacity">Panel opacity</span>
+            <span id="label-panel-value" class="font-mono-num text-sky-300">72%</span>
+          </div>
+          <input id="slider-panel-alpha" type="range" min="30" max="98" value="72" class="w-full accent-sky-500 cursor-pointer" />
+        </div>
+      </div>
+
+      <div class="flex justify-end">
+        <button id="btn-save-wallpaper-modal" type="button" data-i18n="btn.done" class="px-5 py-2 rounded-lg bg-sky-500 hover:bg-sky-400 text-slate-950 font-bold">Done</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================
+       MODAL 4: TODAY'S FOCUS STATS
+       ========================================== -->
+  <div id="modal-stats" class="fixed inset-0 z-50 hidden bg-black/70 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="glass-panel rounded-xl max-w-lg w-full p-6 border border-white/10 text-slate-100 space-y-4 text-xs">
+      <div class="flex items-center justify-between pb-3 border-b border-white/10">
+        <div class="flex items-baseline gap-3">
+          <h2 class="text-base font-bold text-white" data-i18n="stats.title">Today's focus</h2>
+          <span id="stats-total" class="font-mono-num text-sm text-slate-300"></span>
+        </div>
+        <button id="btn-close-stats-modal" type="button" class="text-slate-400 hover:text-white p-1 rounded-lg"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+      </div>
+
+      <div id="stats-list" class="max-h-80 overflow-y-auto space-y-3 pr-1">
+        <!-- Populated dynamically -->
+      </div>
+
+      <div class="flex items-end justify-between gap-4 pt-3 border-t border-white/10">
+        <p class="text-[11px] leading-relaxed text-slate-500" data-i18n="stats.note">Counts only while this page is open. After 2 hours of continuous focus on one project, the timer pauses until you check in.</p>
+        <button id="btn-ok-stats-modal" type="button" data-i18n="btn.close" class="shrink-0 px-5 py-2 rounded-lg bg-sky-500 hover:bg-sky-400 text-slate-950 font-bold">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================
+       MODAL 5: PATROL LOG HISTORY
+       ========================================== -->
+  <div id="modal-log" class="fixed inset-0 z-50 hidden bg-black/70 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="glass-panel rounded-xl max-w-lg w-full p-6 border border-white/10 text-slate-100 space-y-4 text-xs">
+      <div class="flex items-center justify-between pb-3 border-b border-white/10">
+        <h2 class="text-base font-bold text-white" data-i18n="log.title">Today's Log</h2>
+        <button id="btn-close-log-modal" type="button" class="text-slate-400 hover:text-white p-1 rounded-lg"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+      </div>
+
+      <div id="log-list-container" class="max-h-72 overflow-y-auto space-y-2 pr-1">
+        <!-- Populated dynamically -->
+      </div>
+
+      <div class="flex justify-between items-center pt-2 border-t border-white/10">
+        <button id="btn-clear-logs" type="button" data-i18n="btn.clear" class="text-slate-400 hover:text-slate-200 underline">Clear</button>
+        <button id="btn-ok-log-modal" type="button" data-i18n="btn.close" class="px-5 py-2 rounded-lg bg-sky-500 hover:bg-sky-400 text-slate-950 font-bold">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div id="toast-box" class="fixed bottom-5 right-5 z-50 hidden px-4 py-2.5 rounded-lg bg-slate-900/95 text-white text-xs font-medium border border-sky-400/40 backdrop-blur-md transition-all">
+    <span id="toast-text">Done</span>
+  </div>
+
+  <script>
+    (function () {
+      const STORAGE_KEY = 'pulsedesk_secondary_screen_state_v1';
+
+      // Default demo tasks tailored for multi-project switching pain point
+      function getDefaultTasks() {
+        const now = Date.now();
+        return [
+          {
+            id: 'proj-1',
+            name: 'AI Agent Gateway Refactor',
+            tag: 'Core Dev',
+            reminderType: 'loop',
+            intervalMinutes: 30,
+            remainingSeconds: 30 * 60,
+            scheduledTime: '15:00',
+            status: 'active', // 'active' | 'paused'
+            isFocused: true,
+            isAlerting: false,
+            lastCheckedAt: now,
+            checkCount: 0,
+            note: 'Debugging stream timeout retry; local unit tests pass',
+            subtasks: [
+              { id: 's-101', text: 'Load-test token rate-limit middleware', done: true },
+              { id: 's-102', text: 'Fix WebSocket reconnect memory leak', done: true },
+              { id: 's-103', text: 'Wire up Prometheus metrics in staging', done: false },
+              { id: 's-104', text: 'Merge PR #142 and notify frontend', done: false }
+            ]
+          },
+          {
+            id: 'proj-2',
+            name: 'Prod K8s Cluster & Alerts',
+            tag: 'Ops',
+            reminderType: 'loop',
+            intervalMinutes: 15,
+            remainingSeconds: 15 * 60,
+            scheduledTime: '14:00',
+            status: 'active',
+            isFocused: false,
+            isAlerting: false,
+            lastCheckedAt: now,
+            checkCount: 0,
+            note: 'Watch order-service pod memory (limit 75%)',
+            subtasks: [
+              { id: 's-201', text: 'Check Grafana P99 latency for core APIs', done: true },
+              { id: 's-202', text: 'Confirm no new full-table scans in slow log', done: false },
+              { id: 's-203', text: 'Spot-check US-East CDN hit rate', done: false }
+            ]
+          },
+          {
+            id: 'proj-3',
+            name: 'Client On-Prem Delivery Package',
+            tag: 'Delivery',
+            reminderType: 'scheduled',
+            intervalMinutes: 45,
+            remainingSeconds: 45 * 60,
+            scheduledTime: '16:30',
+            status: 'active',
+            isFocused: false,
+            isAlerting: false,
+            lastCheckedAt: now,
+            checkCount: 0,
+            note: 'Waiting for offline Docker build; verify SHA256 at 16:30',
+            subtasks: [
+              { id: 's-301', text: 'Prepare init SQL and offline license files', done: true },
+              { id: 's-302', text: 'Verify ARM64 container startup scripts', done: true },
+              { id: 's-303', text: 'Upload package to client bastion host', done: false },
+              { id: 's-304', text: 'Send acceptance checklist to on-site engineer', done: false }
+            ]
+          },
+          {
+            id: 'proj-4',
+            name: 'Multimodal Fine-tuning Pipeline #09',
+            tag: 'Training',
+            reminderType: 'loop',
+            intervalMinutes: 45,
+            remainingSeconds: 45 * 60,
+            scheduledTime: '18:00',
+            status: 'active',
+            isFocused: false,
+            isAlerting: false,
+            lastCheckedAt: now,
+            checkCount: 0,
+            note: 'Epoch 4 running; watch for loss spikes or OOM',
+            subtasks: [
+              { id: 's-401', text: 'Clean 50k new image-text pairs', done: true },
+              { id: 's-402', text: 'Watch WandB loss curve', done: false },
+              { id: 's-403', text: 'Evaluate Checkpoint-4000 on validation set', done: false }
+            ]
+          }
+        ];
+      }
+
+      let state = {
+        tasks: getDefaultTasks(),
+        viewMode: 'grid', // 'grid' | 'list' | 'hud'
+        filter: 'all', // 'all' | 'alerting' | 'active' | 'paused'
+        globalOverride: false,
+        globalIntervalMinutes: 25,
+        edgeGlowEnabled: true,
+        soundEnabled: true,
+        soundStyle: 'chime',
+        wallpaperPreset: 'mountain', // 'mountain' | 'zen' | 'nebula' | 'obsidian' | 'emerald' | 'custom'
+        accentTheme: 'sky', // 'sky' | 'indigo' | 'violet' | 'teal' | 'orange' | 'pink'
+        surfaceTheme: 'slate', // 'slate' | 'zinc' | 'stone' | 'navy' | 'forest' | 'plum'
+        panelAlpha: 72, // panel opacity in percent
+        lang: 'en', // 'en' | 'zh'
+        compactMode: false,
+        keepAwake: true, // keep the screen on while the page is fullscreen
+        customWallpaperDataUrl: '',
+        bgDim: 60,
+        glassBlur: 16,
+        focusElapsedSeconds: 0,
+        focusSessionSeconds: 0, // continuous focus since the last check-in on the focused project
+        focusStalled: false, // true once the session passes FOCUS_LIMIT_SECONDS without a check-in
+        focusLog: {}, // { 'YYYY-MM-DD': { taskId: { s: seconds, n: name } } }, last 30 days
+        focusPendingSeconds: 0, // time spent past the 2-hour pause; credited only when you check in
+        lastActiveDay: '',
+        todayCheckCount: 0,
+        logs: [],
+      };
+
+      // Load saved state safely
+      function loadState() {
+        try {
+          const raw = localStorage.getItem(STORAGE_KEY);
+          if (raw) {
+            const parsed = JSON.parse(raw);
+            if (parsed && Array.isArray(parsed.tasks) && parsed.tasks.length > 0) {
+              state = Object.assign({}, state, parsed);
+            }
+          }
+        } catch (err) {
+          // Ignore storage error in restricted iframe
+        }
+      }
+
+      function saveState() {
+        try {
+          localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+        } catch (err) {
+          // Ignore storage error
+        }
+      }
+
+      // Interface strings (non-ASCII text is stored as \u escapes)
+      const I18N = {
+        "en": {
+          "list.sep": ",",
+          "app.subtitle": "Multi-project reminders",
+          "hud.focus": "Focus:",
+          "hud.time": "Time",
+          "hud.next": "Next",
+          "hud.nextTitle": "Next project",
+          "hud.none": "None",
+          "hud.compactHint": "Click a blank area to toggle compact view",
+          "btn.newProject": "New project",
+          "global.label": "Timers",
+          "global.labelOn": "Global: {n}m",
+          "view.cards": "Cards",
+          "view.cardsTitle": "Card view",
+          "view.list": "List",
+          "view.listTitle": "List view",
+          "view.hud": "HUD",
+          "view.hudTitle": "Large-text view",
+          "btn.theme": "Theme",
+          "btn.themeTitle": "Wallpaper, colors and panels",
+          "btn.soundTitle": "Sound",
+          "btn.fullscreen": "Fullscreen",
+          "btn.exitFullscreen": "Exit fullscreen",
+          "btn.fullscreenTitle": "Fullscreen (F11)",
+          "lang.switch": "\u4e2d\u6587",
+          "lang.title": "\u5207\u6362\u5230\u4e2d\u6587",
+          "filter.label": "Filter:",
+          "filter.all": "All",
+          "filter.due": "Due",
+          "filter.running": "Running",
+          "filter.paused": "Paused",
+          "filter.done": "Done",
+          "stats.checksToday": "Checks today:",
+          "btn.testAlert": "Test alert",
+          "btn.testAlertTitle": "Trigger a test alert",
+          "btn.resetAll": "Reset all",
+          "btn.log": "Log",
+          "footer.tipLabel": "Tip:",
+          "footer.tip": "Leave a note on the card before switching projects.",
+          "footer.export": "Export",
+          "footer.import": "Import",
+          "footer.resetDemo": "Reset demo",
+          "modal.newProject": "New project",
+          "modal.editProject": "Edit project",
+          "f.name": "Name *",
+          "f.namePh": "e.g. Trading service load test",
+          "f.tag": "Tag",
+          "f.tagPh": "e.g. Ops",
+          "f.priority": "Priority",
+          "opt.high": "High",
+          "opt.medium": "Medium",
+          "opt.low": "Low",
+          "f.reminder": "Reminder",
+          "opt.loop": "Repeat (every N min)",
+          "opt.scheduled": "Daily (at HH:MM)",
+          "f.interval": "Interval (min)",
+          "f.time": "Time (HH:MM)",
+          "f.note": "Note",
+          "f.notePh": "e.g. Check Jenkins #88 for errors",
+          "f.subtasks": "Subtasks (one per line)",
+          "f.subtasksPh": "Check API P99 latency\nReview DB migration script\nPost update to team",
+          "btn.cancel": "Cancel",
+          "btn.save": "Save",
+          "btn.done": "Done",
+          "btn.test": "Test",
+          "btn.clear": "Clear",
+          "btn.close": "Close",
+          "g.title": "Global settings",
+          "g.useGlobal": "Use global interval",
+          "g.interval": "Interval (min):",
+          "g.apply": "Apply to all",
+          "g.sound": "Sound",
+          "opt.chime": "Chime",
+          "opt.bowl": "Singing Bowl",
+          "opt.radar": "Radar",
+          "a.title": "Appearance",
+          "a.wallpaper": "Wallpaper",
+          "wp.mountain": "Aurora Peaks",
+          "wp.zen": "Rainy Temple",
+          "wp.nebula": "Nebula",
+          "wp.obsidian": "Obsidian",
+          "wp.emerald": "Cyber Pine",
+          "a.upload": "+ Upload",
+          "a.themeColor": "Theme color",
+          "a.panelColor": "Panel color",
+          "a.panelOpacity": "Panel opacity",
+          "a.dim": "Dim",
+          "a.blur": "Blur",
+          "accent.sky": "Sky",
+          "accent.indigo": "Indigo",
+          "accent.violet": "Violet",
+          "accent.teal": "Teal",
+          "accent.orange": "Orange",
+          "accent.pink": "Pink",
+          "surface.slate": "Slate",
+          "surface.zinc": "Graphite",
+          "surface.stone": "Warm Gray",
+          "surface.navy": "Navy",
+          "surface.forest": "Forest",
+          "surface.plum": "Plum",
+          "log.title": "Today's Log",
+          "log.empty": "No check-ins today",
+          "log.timerDue": "Timer due",
+          "log.scheduledDue": "Scheduled {time} due",
+          "log.checkedIn": "Checked in",
+          "log.snoozed": "Snoozed {n}m",
+          "log.setFocus": "Set as focus",
+          "log.completed": "Completed",
+          "log.reopened": "Reopened",
+          "log.allDue": "All due projects",
+          "log.checkedInAll": "Checked in all",
+          "log.testAlert": "Test alert",
+          "neglect.checked": "Checked {n}m ago",
+          "neglect.unchecked": "Unchecked {n}m",
+          "neglect.idle": "Idle {n}m",
+          "empty.none": "No projects",
+          "empty.completed": "No completed projects",
+          "prio.high": "High",
+          "prio.medium": "Medium",
+          "prio.low": "Low",
+          "tag.general": "General",
+          "mode.every": "Every {n}m",
+          "mode.global": "(global)",
+          "mode.daily": "Daily {time}",
+          "card.focus": "Focus",
+          "card.checkNow": "Check now",
+          "card.paused": "Paused",
+          "card.check": "Check",
+          "card.pausedIcon": "Paused",
+          "card.noteLabel": "Note:",
+          "card.noteTitle": "Where you left off",
+          "card.notePh": "Where you left off / what to check next",
+          "card.subtasks": "Subtasks",
+          "card.subtasksColon": "Subtasks:",
+          "card.addSubPh": "+ Add subtask",
+          "card.add": "Add",
+          "card.checkIn": "Check in",
+          "card.checkInTitle": "Check in and reset timer",
+          "card.snoozeTitle": "Snooze 5 min",
+          "card.setFocus": "Set focus",
+          "card.setFocusTitle": "Set as focus",
+          "card.done": "Done",
+          "card.doneTitle": "Mark as done",
+          "card.resume": "Resume",
+          "card.pause": "Pause",
+          "card.edit": "Edit",
+          "card.delete": "Delete",
+          "card.doneBadge": "Done",
+          "card.subtaskCount": "{done}/{total} subtasks",
+          "card.reopen": "Reopen",
+          "card.reopenTitle": "Move back to in progress",
+          "toast.checkedIn": "Checked in: {name}",
+          "toast.snoozed": "Snoozed {n}m: {name}",
+          "toast.focus": "Focus: {name}",
+          "toast.completed": "Completed: {name}",
+          "toast.reopened": "Reopened: {name}",
+          "toast.paused": "Paused: {name}",
+          "toast.resumed": "Resumed: {name}",
+          "toast.deleted": "Project deleted",
+          "toast.noteSaved": "Note saved: {name}",
+          "toast.allChecked": "All checked in",
+          "toast.allSnoozed": "All snoozed 5m",
+          "toast.testAlert": "Test alert: {name}",
+          "toast.allReset": "All timers reset",
+          "toast.updated": "Updated: {name}",
+          "toast.created": "Created: {name}",
+          "toast.applyAll": "All repeating projects set to {n}m",
+          "toast.settingsSaved": "Settings saved",
+          "toast.wallpaper": "Wallpaper changed",
+          "toast.wallpaperApplied": "Wallpaper applied",
+          "toast.soundOn": "Sound on",
+          "toast.soundOff": "Sound off",
+          "toast.logCleared": "Log cleared",
+          "toast.fsBlocked": "Fullscreen blocked here. Press F11.",
+          "toast.exported": "Exported pulsedesk_backup.json",
+          "toast.imported": "Import successful",
+          "toast.importFailed": "Import failed: invalid JSON",
+          "toast.demo": "Demo restored",
+          "toast.theme": "Theme: {name}",
+          "toast.panel": "Panel: {name}",
+          "toast.lang": "Language: English",
+          "mode.focusing": "Focusing",
+          "alert.one": "{name} needs a check",
+          "alert.many": "{n} projects need a check",
+          "alert.checkIn": "Check in",
+          "alert.snooze": "+5m",
+          "g.keepAwake": "Keep screen on in fullscreen",
+          "toast.awakeOn": "Screen will stay on while fullscreen",
+          "toast.awakeUnsupported": "This browser can't keep the screen on",
+          "toast.awakeFailed": "Couldn't keep the screen on",
+          "btn.stats": "Stats",
+          "stats.title": "Today's focus",
+          "stats.total": "Total {t}",
+          "stats.empty": "No focus time yet today",
+          "stats.note": "Counts only while this page is open. After 2 hours of continuous focus on one project, the timer pauses until you check in.",
+          "stats.now": "Now",
+          "dur.hm": "{h}h {m}m",
+          "dur.m": "{m}m",
+          "dur.lt1": "<1m",
+          "mode.focusStalled": "Paused at 2h",
+          "alert.stalled": "Still on {name}? Focus paused after 2h",
+          "alert.resume": "Still working",
+          "log.focusStalled": "Focus paused after 2h",
+          "log.focusResumed": "Focus resumed",
+          "toast.focusResumed": "Focus timer resumed: {name}",
+          "footer.privacy": "Your data stays in this browser only. Use Export to back it up.",
+          "btn.checkInRepeating": "Check in repeating",
+          "btn.checkInRepeatingTitle": "Check in every repeating project",
+          "btn.checkInAll": "Check in all",
+          "btn.checkInAllTitle": "Check in every project",
+          "log.allRepeating": "All repeating projects",
+          "log.allProjects": "All projects",
+          "log.checkedInN": "Checked in ({n})",
+          "toast.bulkChecked": "Checked in {n} projects"
+        },
+        "zh": {
+          "list.sep": "\u3001",
+          "app.subtitle": "\u591a\u9879\u76ee\u63d0\u9192",
+          "hud.focus": "\u4e3b\u653b\uff1a",
+          "hud.time": "\u5df2\u7528",
+          "hud.next": "\u4e0b\u4e00\u4e2a",
+          "hud.nextTitle": "\u5207\u6362\u5230\u4e0b\u4e00\u4e2a\u9879\u76ee",
+          "hud.none": "\u65e0",
+          "hud.compactHint": "\u70b9\u51fb\u7a7a\u767d\u5904\u5207\u6362\u7b80\u6d01\u89c6\u56fe",
+          "btn.newProject": "\u65b0\u5efa\u9879\u76ee",
+          "global.label": "\u8ba1\u65f6\u8bbe\u7f6e",
+          "global.labelOn": "\u5168\u5c40\uff1a{n} \u5206\u949f",
+          "view.cards": "\u5361\u7247",
+          "view.cardsTitle": "\u5361\u7247\u89c6\u56fe",
+          "view.list": "\u5217\u8868",
+          "view.listTitle": "\u5217\u8868\u89c6\u56fe",
+          "view.hud": "\u5927\u5b57",
+          "view.hudTitle": "\u5927\u5b57\u89c6\u56fe",
+          "btn.theme": "\u4e3b\u9898",
+          "btn.themeTitle": "\u58c1\u7eb8\u3001\u989c\u8272\u4e0e\u9762\u677f",
+          "btn.soundTitle": "\u63d0\u793a\u97f3",
+          "btn.fullscreen": "\u5168\u5c4f",
+          "btn.exitFullscreen": "\u9000\u51fa\u5168\u5c4f",
+          "btn.fullscreenTitle": "\u5168\u5c4f (F11)",
+          "lang.switch": "EN",
+          "lang.title": "Switch to English",
+          "filter.label": "\u7b5b\u9009\uff1a",
+          "filter.all": "\u5168\u90e8",
+          "filter.due": "\u5f85\u5de1\u68c0",
+          "filter.running": "\u8ba1\u65f6\u4e2d",
+          "filter.paused": "\u5df2\u6682\u505c",
+          "filter.done": "\u5df2\u5b8c\u6210",
+          "stats.checksToday": "\u4eca\u65e5\u5de1\u68c0\uff1a",
+          "btn.testAlert": "\u6d4b\u8bd5\u63d0\u9192",
+          "btn.testAlertTitle": "\u89e6\u53d1\u4e00\u6b21\u6d4b\u8bd5\u63d0\u9192",
+          "btn.resetAll": "\u5168\u90e8\u91cd\u7f6e",
+          "btn.log": "\u8bb0\u5f55",
+          "footer.tipLabel": "\u63d0\u793a\uff1a",
+          "footer.tip": "\u5207\u6362\u9879\u76ee\u524d\uff0c\u5148\u5728\u5361\u7247\u4e0a\u8bb0\u4e0b\u65ad\u70b9\u3002",
+          "footer.export": "\u5bfc\u51fa",
+          "footer.import": "\u5bfc\u5165",
+          "footer.resetDemo": "\u6062\u590d\u793a\u4f8b",
+          "modal.newProject": "\u65b0\u5efa\u9879\u76ee",
+          "modal.editProject": "\u7f16\u8f91\u9879\u76ee",
+          "f.name": "\u540d\u79f0 *",
+          "f.namePh": "\u4f8b\u5982\uff1a\u4ea4\u6613\u670d\u52a1\u538b\u6d4b",
+          "f.tag": "\u6807\u7b7e",
+          "f.tagPh": "\u4f8b\u5982\uff1a\u8fd0\u7ef4",
+          "f.priority": "\u4f18\u5148\u7ea7",
+          "opt.high": "\u9ad8",
+          "opt.medium": "\u4e2d",
+          "opt.low": "\u4f4e",
+          "f.reminder": "\u63d0\u9192\u65b9\u5f0f",
+          "opt.loop": "\u5faa\u73af\uff08\u6bcf N \u5206\u949f\uff09",
+          "opt.scheduled": "\u6bcf\u65e5\u5b9a\u65f6\uff08HH:MM\uff09",
+          "f.interval": "\u95f4\u9694\uff08\u5206\u949f\uff09",
+          "f.time": "\u65f6\u95f4\uff08HH:MM\uff09",
+          "f.note": "\u65ad\u70b9\u5907\u5fd8",
+          "f.notePh": "\u4f8b\u5982\uff1a\u68c0\u67e5 Jenkins #88 \u662f\u5426\u62a5\u9519",
+          "f.subtasks": "\u5b50\u4efb\u52a1\uff08\u6bcf\u884c\u4e00\u4e2a\uff09",
+          "f.subtasksPh": "\u68c0\u67e5\u63a5\u53e3 P99 \u5ef6\u8fdf\n\u6838\u5bf9\u6570\u636e\u5e93\u8fc1\u79fb\u811a\u672c\n\u540c\u6b65\u8fdb\u5ea6\u5230\u9879\u76ee\u7fa4",
+          "btn.cancel": "\u53d6\u6d88",
+          "btn.save": "\u4fdd\u5b58",
+          "btn.done": "\u5b8c\u6210",
+          "btn.test": "\u8bd5\u542c",
+          "btn.clear": "\u6e05\u7a7a",
+          "btn.close": "\u5173\u95ed",
+          "g.title": "\u5168\u5c40\u8bbe\u7f6e",
+          "g.useGlobal": "\u4f7f\u7528\u5168\u5c40\u95f4\u9694",
+          "g.interval": "\u95f4\u9694\uff08\u5206\u949f\uff09\uff1a",
+          "g.apply": "\u5e94\u7528\u5230\u5168\u90e8",
+          "g.sound": "\u63d0\u793a\u97f3",
+          "opt.chime": "\u98ce\u94c3",
+          "opt.bowl": "\u9882\u94b5",
+          "opt.radar": "\u96f7\u8fbe",
+          "a.title": "\u5916\u89c2",
+          "a.wallpaper": "\u58c1\u7eb8",
+          "wp.mountain": "\u6781\u5149\u96ea\u5c71",
+          "wp.zen": "\u591c\u96e8\u7985\u9662",
+          "wp.nebula": "\u661f\u4e91",
+          "wp.obsidian": "\u9ed1\u66dc",
+          "wp.emerald": "\u677e\u6797",
+          "a.upload": "+ \u4e0a\u4f20",
+          "a.themeColor": "\u4e3b\u9898\u8272",
+          "a.panelColor": "\u9762\u677f\u989c\u8272",
+          "a.panelOpacity": "\u9762\u677f\u4e0d\u900f\u660e\u5ea6",
+          "a.dim": "\u80cc\u666f\u538b\u6697",
+          "a.blur": "\u6a21\u7cca",
+          "accent.sky": "\u5929\u84dd",
+          "accent.indigo": "\u975b\u84dd",
+          "accent.violet": "\u7d2b\u7f57\u5170",
+          "accent.teal": "\u9752\u7eff",
+          "accent.orange": "\u6a59",
+          "accent.pink": "\u7c89",
+          "surface.slate": "\u84dd\u7070",
+          "surface.zinc": "\u77f3\u58a8",
+          "surface.stone": "\u6696\u7070",
+          "surface.navy": "\u6df1\u6d77\u84dd",
+          "surface.forest": "\u58a8\u7eff",
+          "surface.plum": "\u6885\u7d2b",
+          "log.title": "\u4eca\u65e5\u8bb0\u5f55",
+          "log.empty": "\u4eca\u65e5\u6682\u65e0\u8bb0\u5f55",
+          "log.timerDue": "\u5012\u8ba1\u65f6\u5230\u70b9",
+          "log.scheduledDue": "\u5b9a\u65f6 {time} \u5230\u70b9",
+          "log.checkedIn": "\u5df2\u5de1\u68c0",
+          "log.snoozed": "\u5ef6\u540e {n} \u5206\u949f",
+          "log.setFocus": "\u8bbe\u4e3a\u4e3b\u653b",
+          "log.completed": "\u5df2\u5b8c\u6210",
+          "log.reopened": "\u79fb\u56de\u8fdb\u884c\u4e2d",
+          "log.allDue": "\u5168\u90e8\u5f85\u5de1\u68c0\u9879\u76ee",
+          "log.checkedInAll": "\u5168\u90e8\u5df2\u5de1\u68c0",
+          "log.testAlert": "\u6d4b\u8bd5\u63d0\u9192",
+          "neglect.checked": "{n} \u5206\u949f\u524d\u5df2\u5de1\u68c0",
+          "neglect.unchecked": "{n} \u5206\u949f\u672a\u68c0\u67e5",
+          "neglect.idle": "\u5df2\u51b7\u843d {n} \u5206\u949f",
+          "empty.none": "\u6682\u65e0\u9879\u76ee",
+          "empty.completed": "\u6682\u65e0\u5df2\u5b8c\u6210\u9879\u76ee",
+          "prio.high": "\u9ad8\u4f18",
+          "prio.medium": "\u5e38\u89c4",
+          "prio.low": "\u957f\u7ebf",
+          "tag.general": "\u5e38\u89c4",
+          "mode.every": "\u6bcf {n} \u5206\u949f",
+          "mode.global": "\uff08\u5168\u5c40\uff09",
+          "mode.daily": "\u6bcf\u65e5 {time}",
+          "card.focus": "\u4e3b\u653b",
+          "card.checkNow": "\u8bf7\u5de1\u68c0",
+          "card.paused": "\u5df2\u6682\u505c",
+          "card.check": "\u8bf7\u5de1\u68c0",
+          "card.pausedIcon": "\u5df2\u6682\u505c",
+          "card.noteLabel": "\u65ad\u70b9\uff1a",
+          "card.noteTitle": "\u5207\u6362\u524d\u8bb0\u4e0b\u505c\u5728\u54ea",
+          "card.notePh": "\u505c\u5728\u54ea / \u4e0b\u6b21\u770b\u4ec0\u4e48",
+          "card.subtasks": "\u5b50\u4efb\u52a1",
+          "card.subtasksColon": "\u5b50\u4efb\u52a1\uff1a",
+          "card.addSubPh": "+ \u6dfb\u52a0\u5b50\u4efb\u52a1",
+          "card.add": "\u6dfb\u52a0",
+          "card.checkIn": "\u5df2\u5de1\u68c0",
+          "card.checkInTitle": "\u786e\u8ba4\u5df2\u68c0\u67e5\u5e76\u91cd\u7f6e\u8ba1\u65f6",
+          "card.snoozeTitle": "\u5ef6\u540e 5 \u5206\u949f",
+          "card.setFocus": "\u8bbe\u4e3a\u4e3b\u653b",
+          "card.setFocusTitle": "\u8bbe\u4e3a\u5f53\u524d\u4e3b\u653b",
+          "card.done": "\u5b8c\u6210",
+          "card.doneTitle": "\u6807\u8bb0\u4e3a\u5b8c\u6210",
+          "card.resume": "\u7ee7\u7eed",
+          "card.pause": "\u6682\u505c",
+          "card.edit": "\u7f16\u8f91",
+          "card.delete": "\u5220\u9664",
+          "card.doneBadge": "\u5df2\u5b8c\u6210",
+          "card.subtaskCount": "\u5b50\u4efb\u52a1 {done}/{total}",
+          "card.reopen": "\u79fb\u56de\u8fdb\u884c\u4e2d",
+          "card.reopenTitle": "\u79fb\u56de\u6b63\u5728\u8fdb\u884c\u4e2d",
+          "toast.checkedIn": "\u5df2\u5de1\u68c0\uff1a{name}",
+          "toast.snoozed": "\u5df2\u5ef6\u540e {n} \u5206\u949f\uff1a{name}",
+          "toast.focus": "\u4e3b\u653b\uff1a{name}",
+          "toast.completed": "\u5df2\u5b8c\u6210\uff1a{name}",
+          "toast.reopened": "\u5df2\u79fb\u56de\u8fdb\u884c\u4e2d\uff1a{name}",
+          "toast.paused": "\u5df2\u6682\u505c\uff1a{name}",
+          "toast.resumed": "\u5df2\u7ee7\u7eed\uff1a{name}",
+          "toast.deleted": "\u9879\u76ee\u5df2\u5220\u9664",
+          "toast.noteSaved": "\u65ad\u70b9\u5df2\u4fdd\u5b58\uff1a{name}",
+          "toast.allChecked": "\u5df2\u5168\u90e8\u5de1\u68c0",
+          "toast.allSnoozed": "\u5df2\u5168\u90e8\u5ef6\u540e 5 \u5206\u949f",
+          "toast.testAlert": "\u6d4b\u8bd5\u63d0\u9192\uff1a{name}",
+          "toast.allReset": "\u8ba1\u65f6\u5df2\u5168\u90e8\u91cd\u7f6e",
+          "toast.updated": "\u5df2\u66f4\u65b0\uff1a{name}",
+          "toast.created": "\u5df2\u521b\u5efa\uff1a{name}",
+          "toast.applyAll": "\u6240\u6709\u5faa\u73af\u9879\u76ee\u5df2\u8bbe\u4e3a {n} \u5206\u949f",
+          "toast.settingsSaved": "\u8bbe\u7f6e\u5df2\u4fdd\u5b58",
+          "toast.wallpaper": "\u58c1\u7eb8\u5df2\u66f4\u6362",
+          "toast.wallpaperApplied": "\u5df2\u5e94\u7528\u58c1\u7eb8",
+          "toast.soundOn": "\u63d0\u793a\u97f3\u5df2\u5f00\u542f",
+          "toast.soundOff": "\u5df2\u9759\u97f3",
+          "toast.logCleared": "\u8bb0\u5f55\u5df2\u6e05\u7a7a",
+          "toast.fsBlocked": "\u6b64\u5904\u65e0\u6cd5\u5168\u5c4f\uff0c\u8bf7\u6309 F11\u3002",
+          "toast.exported": "\u5df2\u5bfc\u51fa pulsedesk_backup.json",
+          "toast.imported": "\u5bfc\u5165\u6210\u529f",
+          "toast.importFailed": "\u5bfc\u5165\u5931\u8d25\uff1aJSON \u683c\u5f0f\u65e0\u6548",
+          "toast.demo": "\u5df2\u6062\u590d\u793a\u4f8b",
+          "toast.theme": "\u4e3b\u9898\u8272\uff1a{name}",
+          "toast.panel": "\u9762\u677f\u989c\u8272\uff1a{name}",
+          "toast.lang": "\u8bed\u8a00\uff1a\u4e2d\u6587",
+          "date.zh": "{m}\u6708{d}\u65e5 {w}",
+          "weekday.0": "\u5468\u65e5",
+          "weekday.1": "\u5468\u4e00",
+          "weekday.2": "\u5468\u4e8c",
+          "weekday.3": "\u5468\u4e09",
+          "weekday.4": "\u5468\u56db",
+          "weekday.5": "\u5468\u4e94",
+          "weekday.6": "\u5468\u516d",
+          "mode.focusing": "\u4e13\u6ce8\u4e2d",
+          "alert.one": "{name} \u9700\u8981\u5de1\u68c0",
+          "alert.many": "{n} \u4e2a\u9879\u76ee\u9700\u8981\u5de1\u68c0",
+          "alert.checkIn": "\u5df2\u5de1\u68c0",
+          "alert.snooze": "+5 \u5206\u949f",
+          "g.keepAwake": "\u5168\u5c4f\u65f6\u4fdd\u6301\u5c4f\u5e55\u5e38\u4eae",
+          "toast.awakeOn": "\u5168\u5c4f\u671f\u95f4\u5c4f\u5e55\u5c06\u4fdd\u6301\u5e38\u4eae",
+          "toast.awakeUnsupported": "\u6b64\u6d4f\u89c8\u5668\u4e0d\u652f\u6301\u4fdd\u6301\u5c4f\u5e55\u5e38\u4eae",
+          "toast.awakeFailed": "\u65e0\u6cd5\u4fdd\u6301\u5c4f\u5e55\u5e38\u4eae",
+          "btn.stats": "\u7edf\u8ba1",
+          "stats.title": "\u4eca\u65e5\u4e13\u6ce8",
+          "stats.total": "\u5408\u8ba1 {t}",
+          "stats.empty": "\u4eca\u5929\u8fd8\u6ca1\u6709\u4e13\u6ce8\u8bb0\u5f55",
+          "stats.note": "\u4ec5\u5728\u9875\u9762\u6253\u5f00\u65f6\u8ba1\u65f6\u3002\u540c\u4e00\u9879\u76ee\u8fde\u7eed\u4e13\u6ce8\u6ee1 2 \u5c0f\u65f6\u540e\u6682\u505c\u8ba1\u65f6\uff0c\u9700\u8981\u518d\u6b21\u786e\u8ba4\u624d\u4f1a\u7ee7\u7eed\u3002",
+          "stats.now": "\u8fdb\u884c\u4e2d",
+          "dur.hm": "{h} \u5c0f\u65f6 {m} \u5206",
+          "dur.m": "{m} \u5206\u949f",
+          "dur.lt1": "\u4e0d\u5230 1 \u5206\u949f",
+          "mode.focusStalled": "\u5df2\u6ee1 2 \u5c0f\u65f6\uff0c\u8ba1\u65f6\u6682\u505c",
+          "alert.stalled": "\u8fd8\u5728\u505a {name} \u5417\uff1f\u5df2\u8fde\u7eed\u4e13\u6ce8 2 \u5c0f\u65f6\uff0c\u8ba1\u65f6\u6682\u505c",
+          "alert.resume": "\u7ee7\u7eed\u4e13\u6ce8",
+          "log.focusStalled": "\u8fde\u7eed\u4e13\u6ce8 2 \u5c0f\u65f6\uff0c\u8ba1\u65f6\u6682\u505c",
+          "log.focusResumed": "\u7ee7\u7eed\u4e13\u6ce8",
+          "toast.focusResumed": "\u7ee7\u7eed\u8ba1\u65f6\uff1a{name}",
+          "footer.privacy": "\u6570\u636e\u53ea\u4fdd\u5b58\u5728\u5f53\u524d\u6d4f\u89c8\u5668\u4e2d\uff0c\u53ef\u7528\u300c\u5bfc\u51fa\u300d\u5907\u4efd\u3002",
+          "btn.checkInRepeating": "\u5faa\u73af\u4efb\u52a1\u5168\u90e8\u5de1\u68c0",
+          "btn.checkInRepeatingTitle": "\u5bf9\u6240\u6709\u5faa\u73af\u63d0\u9192\u7684\u9879\u76ee\u6267\u884c\u5de1\u68c0",
+          "btn.checkInAll": "\u5168\u90e8\u5de1\u68c0",
+          "btn.checkInAllTitle": "\u5bf9\u6240\u6709\u9879\u76ee\u6267\u884c\u5de1\u68c0",
+          "log.allRepeating": "\u5168\u90e8\u5faa\u73af\u9879\u76ee",
+          "log.allProjects": "\u5168\u90e8\u9879\u76ee",
+          "log.checkedInN": "\u5df2\u5de1\u68c0\uff08{n} \u4e2a\uff09",
+          "toast.bulkChecked": "\u5df2\u5de1\u68c0 {n} \u4e2a\u9879\u76ee"
+        }
+      };
+
+      function tr(key, vars) {
+        const dict = I18N[state.lang] || I18N.en;
+        let text = (dict[key] !== undefined) ? dict[key] : (I18N.en[key] !== undefined ? I18N.en[key] : key);
+        if (vars) {
+          text = text.replace(/\{(\w+)\}/g, (m, k) => (vars[k] !== undefined ? String(vars[k]) : m));
+        }
+        return text;
+      }
+
+      function formatDateLabel(now) {
+        if (state.lang === 'zh') {
+          return tr('date.zh', { m: now.getMonth() + 1, d: now.getDate(), w: tr('weekday.' + now.getDay()) });
+        }
+        const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+        const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+        return `${days[now.getDay()]}, ${months[now.getMonth()]} ${now.getDate()}`;
+      }
+
+      function applyLanguage() {
+        document.documentElement.lang = state.lang === 'zh' ? 'zh-CN' : 'en';
+        document.querySelectorAll('[data-i18n]').forEach((el) => {
+          el.textContent = tr(el.getAttribute('data-i18n'));
+        });
+        document.querySelectorAll('[data-i18n-title]').forEach((el) => {
+          el.title = tr(el.getAttribute('data-i18n-title'));
+        });
+        document.querySelectorAll('[data-i18n-placeholder]').forEach((el) => {
+          el.placeholder = tr(el.getAttribute('data-i18n-placeholder'));
+        });
+        const fsLabel = document.getElementById('fullscreen-label');
+        if (fsLabel) {
+          fsLabel.textContent = document.fullscreenElement ? tr('btn.exitFullscreen') : tr('btn.fullscreen');
+        }
+        const dateEl = document.getElementById('hud-date');
+        if (dateEl) dateEl.textContent = formatDateLabel(new Date());
+      }
+
+      // Toast helper
+      let toastTimer = null;
+      function showToast(msg) {
+        const box = document.getElementById('toast-box');
+        const text = document.getElementById('toast-text');
+        if (!box || !text) return;
+        text.textContent = msg;
+        box.classList.remove('hidden');
+        if (toastTimer) clearTimeout(toastTimer);
+        toastTimer = setTimeout(() => {
+          box.classList.add('hidden');
+        }, 2800);
+      }
+
+      // Web Audio API Sound Synthesizer (Zero external audio files needed)
+      let audioCtx = null;
+      function playAlertSound(forcePlay) {
+        if (!state.soundEnabled && !forcePlay) return;
+        try {
+          const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+          if (!AudioContextClass) return;
+          if (!audioCtx) audioCtx = new AudioContextClass();
+          if (audioCtx.state === 'suspended') audioCtx.resume();
+
+          const now = audioCtx.currentTime;
+          const style = state.soundStyle || 'chime';
+
+          if (style === 'chime') {
+            // Pleasant two-tone crystal chime (E5 -> B5)
+            [659.25, 987.77].forEach((freq, idx) => {
+              const osc = audioCtx.createOscillator();
+              const gain = audioCtx.createGain();
+              osc.type = 'sine';
+              osc.frequency.setValueAtTime(freq, now + idx * 0.16);
+              gain.gain.setValueAtTime(0.001, now + idx * 0.16);
+              gain.gain.exponentialRampToValueAtTime(0.22, now + idx * 0.16 + 0.03);
+              gain.gain.exponentialRampToValueAtTime(0.0001, now + idx * 0.16 + 0.75);
+              osc.connect(gain);
+              gain.connect(audioCtx.destination);
+              osc.start(now + idx * 0.16);
+              osc.stop(now + idx * 0.16 + 0.8);
+            });
+          } else if (style === 'bowl') {
+            // Warm singing bowl harmonic chord (432Hz + 648Hz)
+            [432, 648].forEach((freq) => {
+              const osc = audioCtx.createOscillator();
+              const gain = audioCtx.createGain();
+              osc.type = 'triangle';
+              osc.frequency.setValueAtTime(freq, now);
+              gain.gain.setValueAtTime(0.001, now);
+              gain.gain.exponentialRampToValueAtTime(0.18, now + 0.08);
+              gain.gain.exponentialRampToValueAtTime(0.0001, now + 1.8);
+              osc.connect(gain);
+              gain.connect(audioCtx.destination);
+              osc.start(now);
+              osc.stop(now + 1.85);
+            });
+          } else {
+            // Sci-fi radar double ping
+            [0, 0.22].forEach((offset) => {
+              const osc = audioCtx.createOscillator();
+              const gain = audioCtx.createGain();
+              osc.type = 'sine';
+              osc.frequency.setValueAtTime(1180, now + offset);
+              osc.frequency.exponentialRampToValueAtTime(880, now + offset + 0.15);
+              gain.gain.setValueAtTime(0.2, now + offset);
+              gain.gain.exponentialRampToValueAtTime(0.001, now + offset + 0.18);
+              osc.connect(gain);
+              gain.connect(audioCtx.destination);
+              osc.start(now + offset);
+              osc.stop(now + offset + 0.2);
+            });
+          }
+        } catch (e) {
+          // Ignore audio error if user hasn't interacted yet
+        }
+      }
+
+      // Accent theme palettes (Tailwind RGB triplets for shades 50..950)
+      const ACCENT_SHADE_KEYS = [50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 950];
+      const ACCENT_THEMES = {
+        sky: { label: 'Sky', shades: ['240 249 255', '224 242 254', '186 230 253', '125 211 252', '56 189 248', '14 165 233', '2 132 199', '3 105 161', '7 89 133', '12 74 110', '8 47 73'] },
+        indigo: { label: 'Indigo', shades: ['238 242 255', '224 231 255', '199 210 254', '165 180 252', '129 140 248', '99 102 241', '79 70 229', '67 56 202', '55 48 163', '49 46 129', '30 27 75'] },
+        violet: { label: 'Violet', shades: ['245 243 255', '237 233 254', '221 214 254', '196 181 253', '167 139 250', '139 92 246', '124 58 237', '109 40 217', '91 33 182', '76 29 149', '46 16 101'] },
+        teal: { label: 'Teal', shades: ['240 253 250', '204 251 241', '153 246 228', '94 234 212', '45 212 191', '20 184 166', '13 148 136', '15 118 110', '17 94 89', '19 78 74', '4 47 46'] },
+        orange: { label: 'Orange', shades: ['255 247 237', '255 237 213', '254 215 170', '253 186 116', '251 146 60', '249 115 22', '234 88 12', '194 65 12', '154 52 18', '124 45 18', '67 20 7'] },
+        pink: { label: 'Pink', shades: ['253 242 248', '252 231 243', '251 207 232', '249 168 212', '244 114 182', '236 72 153', '219 39 119', '190 24 93', '157 23 77', '131 24 67', '80 7 36'] }
+      };
+
+      // Panel (surface) palettes: RGB triplets for slate shades 700, 800, 900, 950
+      const SURFACE_SHADE_KEYS = [700, 800, 900, 950];
+      const SURFACE_THEMES = {
+        slate: ['51 65 85', '30 41 59', '15 23 42', '2 6 23'],
+        zinc: ['63 63 70', '39 39 42', '24 24 27', '9 9 11'],
+        stone: ['68 64 60', '41 37 36', '28 25 23', '12 10 9'],
+        navy: ['37 52 102', '23 34 74', '13 22 54', '6 11 32'],
+        forest: ['38 70 58', '22 48 40', '12 32 27', '5 18 15'],
+        plum: ['76 45 82', '52 28 58', '33 16 38', '18 7 22']
+      };
+
+      function applySurface() {
+        const key = SURFACE_THEMES[state.surfaceTheme] ? state.surfaceTheme : 'slate';
+        SURFACE_SHADE_KEYS.forEach((shade, idx) => {
+          document.documentElement.style.setProperty('--surface-' + shade, SURFACE_THEMES[key][idx]);
+        });
+        const alpha = Math.min(98, Math.max(30, Number(state.panelAlpha) || 72));
+        document.documentElement.style.setProperty('--panel-alpha', String(alpha / 100));
+        document.querySelectorAll('.surface-swatch').forEach((btn) => {
+          const on = btn.getAttribute('data-surface') === key;
+          btn.style.boxShadow = on ? '0 0 0 3px rgba(15, 23, 42, 0.95), 0 0 0 5px #ffffff' : '';
+        });
+      }
+
+      function applyAccent() {
+        const key = ACCENT_THEMES[state.accentTheme] ? state.accentTheme : 'sky';
+        const theme = ACCENT_THEMES[key];
+        ACCENT_SHADE_KEYS.forEach((shade, idx) => {
+          document.documentElement.style.setProperty('--accent-' + shade, theme.shades[idx]);
+        });
+        document.querySelectorAll('.accent-swatch').forEach((btn) => {
+          const on = btn.getAttribute('data-accent') === key;
+          btn.style.boxShadow = on ? '0 0 0 3px rgba(15, 23, 42, 0.95), 0 0 0 5px #ffffff' : '';
+        });
+      }
+
+      // Apply Wallpaper, Dimming, and Glass Blur
+      function applyAppearance() {
+        const wpLayer = document.getElementById('wallpaper-layer');
+        const dimLayer = document.getElementById('dim-layer');
+        const mountainImg = document.getElementById('preset-img-mountain');
+        const zenImg = document.getElementById('preset-img-zen');
+
+        // Set thumbnails on preset buttons if available
+        const mountainBtn = document.querySelector('[data-bg-preset="mountain"]');
+        const zenBtn = document.querySelector('[data-bg-preset="zen"]');
+        if (mountainBtn && mountainImg && mountainImg.src) {
+          mountainBtn.style.backgroundImage = `url("${mountainImg.src}")`;
+          mountainBtn.style.backgroundSize = 'cover';
+          mountainBtn.style.backgroundPosition = 'center';
+        }
+        if (zenBtn && zenImg && zenImg.src) {
+          zenBtn.style.backgroundImage = `url("${zenImg.src}")`;
+          zenBtn.style.backgroundSize = 'cover';
+          zenBtn.style.backgroundPosition = 'center';
+        }
+
+        if (wpLayer) {
+          wpLayer.style.backgroundImage = '';
+          if (state.wallpaperPreset === 'mountain' && mountainImg && mountainImg.src) {
+            wpLayer.style.backgroundImage = `url("${mountainImg.src}")`;
+          } else if (state.wallpaperPreset === 'zen' && zenImg && zenImg.src) {
+            wpLayer.style.backgroundImage = `url("${zenImg.src}")`;
+          } else if (state.wallpaperPreset === 'custom' && state.customWallpaperDataUrl) {
+            wpLayer.style.backgroundImage = `url("${state.customWallpaperDataUrl}")`;
+          } else if (state.wallpaperPreset === 'nebula') {
+            wpLayer.style.backgroundImage = 'linear-gradient(135deg, #090d16 0%, #1e1b4b 50%, #0f172a 100%)';
+          } else if (state.wallpaperPreset === 'emerald') {
+            wpLayer.style.backgroundImage = 'linear-gradient(135deg, #052e16 0%, #0f172a 60%, #022c22 100%)';
+          } else {
+            wpLayer.style.backgroundImage = 'radial-gradient(circle at top right, #1e293b, #090d16 70%)';
+          }
+        }
+
+        if (dimLayer) {
+          dimLayer.style.opacity = String((state.bgDim || 60) / 100);
+        }
+        document.documentElement.style.setProperty('--glass-blur', (state.glassBlur ?? 16) + 'px');
+        applyAccent();
+        applySurface();
+
+        // Update active border on preset buttons
+        document.querySelectorAll('.bg-preset-btn').forEach((btn) => {
+          const preset = btn.getAttribute('data-bg-preset');
+          if (preset === state.wallpaperPreset) {
+            btn.classList.add('border-sky-400');
+            btn.classList.remove('border-white/15');
+          } else {
+            btn.classList.remove('border-sky-400');
+            btn.classList.add('border-white/15');
+          }
+        });
+
+        // Sound icon state
+        const soundOn = document.getElementById('icon-sound-on');
+        const soundOff = document.getElementById('icon-sound-off');
+        if (soundOn && soundOff) {
+          soundOn.classList.toggle('hidden', !state.soundEnabled);
+          soundOff.classList.toggle('hidden', state.soundEnabled);
+        }
+
+        // Global label state
+        const globalLabel = document.getElementById('global-mode-label');
+        if (globalLabel) {
+          globalLabel.textContent = state.globalOverride
+            ? tr('global.labelOn', { n: state.globalIntervalMinutes })
+            : tr('global.label');
+        }
+      }
+
+      // Format seconds to MM:SS or HH:MM:SS
+      function formatSeconds(sec) {
+        const s = Math.max(0, Math.floor(sec));
+        const hrs = Math.floor(s / 3600);
+        const mins = Math.floor((s % 3600) / 60);
+        const secs = s % 60;
+        const pad = (n) => String(n).padStart(2, '0');
+        if (hrs > 0) {
+          return `${pad(hrs)}:${pad(mins)}:${pad(secs)}`;
+        }
+        return `${pad(mins)}:${pad(secs)}`;
+      }
+
+      // Compute seconds remaining until scheduled HH:MM
+      function getSecondsUntilTime(hhmm) {
+        if (!hhmm || !hhmm.includes(':')) return 1800;
+        const parts = hhmm.split(':');
+        const targetH = parseInt(parts[0], 10) || 0;
+        const targetM = parseInt(parts[1], 10) || 0;
+        const now = new Date();
+        const target = new Date(now);
+        target.setHours(targetH, targetM, 0, 0);
+        let diff = Math.floor((target.getTime() - now.getTime()) / 1000);
+        if (diff < 0) {
+          // Next day
+          diff += 24 * 3600;
+        }
+        return diff;
+      }
+
+      // Neglect temperature indicator (time since last check)
+      function getNeglectInfo(lastCheckedAt) {
+        const mins = Math.max(0, Math.floor((Date.now() - (lastCheckedAt || Date.now())) / 60000));
+        if (mins < 20) {
+          return { text: tr('neglect.checked', { n: mins }), badgeClass: 'text-slate-400 bg-white/5 border-white/10' };
+        } else if (mins < 45) {
+          return { text: tr('neglect.unchecked', { n: mins }), badgeClass: 'text-slate-200 bg-white/5 border-white/20' };
+        }
+        return { text: tr('neglect.idle', { n: mins }), badgeClass: 'text-amber-200 bg-amber-400/10 border-amber-300/40' };
+      }
+
+      function addPatrolLog(projectName, actionText) {
+        const now = new Date();
+        const pad = (n) => String(n).padStart(2, '0');
+        const timeStr = `${pad(now.getHours())}:${pad(now.getMinutes())}:${pad(now.getSeconds())}`;
+        state.logs.unshift({
+          time: timeStr,
+          project: projectName,
+          action: actionText
+        });
+        if (state.logs.length > 50) state.logs.pop();
+      }
+
+      // Escape HTML to prevent XSS
+      function escapeHtml(str) {
+        return String(str || '')
+          .replace(/&/g, '&amp;')
+          .replace(/</g, '&lt;')
+          .replace(/>/g, '&gt;')
+          .replace(/"/g, '&quot;');
+      }
+
+      // Render top HUD active project & alert banners
+      function updateAlertBannersAndCounts() {
+        const alertingTasks = state.tasks.filter((t) => t.isAlerting && t.status !== 'completed');
+        const activeTasks = state.tasks.filter((t) => t.status === 'active');
+        const pausedTasks = state.tasks.filter((t) => t.status === 'paused');
+        const completedTasks = state.tasks.filter((t) => t.status === 'completed');
+        const openTasks = state.tasks.filter((t) => t.status !== 'completed');
+
+        document.getElementById('count-all').textContent = String(openTasks.length);
+        document.getElementById('count-completed').textContent = String(completedTasks.length);
+        document.getElementById('count-alerting').textContent = String(alertingTasks.length);
+        document.getElementById('count-active').textContent = String(activeTasks.length);
+        document.getElementById('count-paused').textContent = String(pausedTasks.length);
+        document.getElementById('today-check-count').textContent = String(state.todayCheckCount || 0);
+
+        // Due count in the browser tab title (reminders themselves live on the cards)
+        const due = alertingTasks.length;
+        const stalledTask = state.focusStalled ? getFocusedTask() : null;
+        const attention = due + (stalledTask && !stalledTask.isAlerting ? 1 : 0);
+        document.title = (attention > 0 ? '(' + attention + ') ' : '') + 'PulseDesk v12';
+        const hudDur = document.getElementById('hud-focus-duration');
+        if (hudDur) {
+          hudDur.classList.toggle('text-amber-300', Boolean(stalledTask));
+          hudDur.classList.toggle('text-slate-100', !stalledTask);
+        }
+
+        // Focused project in HUD
+        const openList = state.tasks.filter((t) => t.status !== 'completed');
+        const focused = openList.find((t) => t.isFocused) || openList[0];
+        const hudProjEl = document.getElementById('hud-active-project');
+        if (hudProjEl) {
+          hudProjEl.textContent = focused ? focused.name : tr('hud.none');
+        }
+      }
+
+      // Render Tasks Grid / List / Zen HUD
+      // Monochrome line icons (stroke uses the current text color)
+      const ICON_PATHS = {
+        x: '<path d="M6 6l12 12M18 6L6 18"/>',
+        pause: '<path d="M9 6v12M15 6v12"/>',
+        play: '<path d="M8 5.5v13l10.5-6.5z"/>',
+        edit: '<path d="M4 20h4L19 9l-4-4L4 16z"/><path d="M13.5 6.5l4 4"/>',
+        check: '<path d="M5 12.5l4.5 4.5L19 7.5"/>',
+        trash: '<path d="M5 7h14"/><path d="M10 11v6M14 11v6"/><path d="M6.5 7l1 12.5h9l1-12.5"/><path d="M9.5 7V4.5h5V7"/>'
+      };
+      function icon(name, size) {
+        const px = size || 15;
+        return '<svg width="' + px + '" height="' + px + '" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + ICON_PATHS[name] + '</svg>';
+      }
+
+      function alertIcon(size) {
+        return '<svg class="alert-icon" width="' + size + '" height="' + size + '" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#fbbf24"/><rect x="10.3" y="5.4" width="3.4" height="8.8" rx="1.7" fill="#0f172a"/><circle cx="12" cy="17.9" r="1.85" fill="#0f172a"/></svg>';
+      }
+
+      function getFilteredTasks() {
+        const filtered = state.tasks.filter((t) => {
+          if (state.filter === 'alerting') return t.isAlerting;
+          if (state.filter === 'active') return t.status === 'active';
+          if (state.filter === 'paused') return t.status === 'paused';
+          if (state.filter === 'completed') return t.status === 'completed';
+          return t.status !== 'completed';
+        });
+        if (state.filter === 'completed') {
+          filtered.sort((a, b) => (b.completedAt || 0) - (a.completedAt || 0));
+        }
+        return filtered;
+      }
+
+      function getTimerInfo(task) {
+        const effectiveMinutes = (state.globalOverride && task.reminderType === 'loop')
+          ? state.globalIntervalMinutes
+          : (task.intervalMinutes || 30);
+        const totalSecs = effectiveMinutes * 60;
+        const remSecs = task.reminderType === 'loop'
+          ? task.remainingSeconds
+          : getSecondsUntilTime(task.scheduledTime);
+        const timerPct = task.reminderType === 'loop'
+          ? Math.max(0, Math.min(100, Math.round(((totalSecs - remSecs) / Math.max(1, totalSecs)) * 100)))
+          : 50;
+        return { effectiveMinutes, remSecs, timerPct };
+      }
+
+      function getNeglectLevel(lastCheckedAt) {
+        const mins = Math.max(0, Math.floor((Date.now() - (lastCheckedAt || Date.now())) / 60000));
+        return mins < 20 ? 0 : (mins < 45 ? 1 : 2);
+      }
+
+      // Everything that changes card structure; per-second values (countdown, bar, minutes) are excluded
+      let lastRenderKey = '';
+      function getRenderKey() {
+        const visible = getFilteredTasks().map((t) => [
+          t.id, t.name, t.tag, t.reminderType, t.intervalMinutes, t.scheduledTime,
+          t.status, t.isFocused, t.isAlerting, t.note, t.completedAt, (t.isFocused ? -1 : getNeglectLevel(t.lastCheckedAt)),
+          (t.subtasks || []).map((sub) => sub.id + (sub.done ? '1' : '0') + sub.text).join('|'),
+          JSON.stringify(t.layout || {})
+        ]);
+        return JSON.stringify([state.viewMode, state.filter, state.lang, state.globalOverride, state.globalIntervalMinutes, Boolean(state.focusStalled), visible]);
+      }
+
+      // Update countdowns, progress bars and "minutes since check" in place
+      function updateLiveReadouts() {
+        document.querySelectorAll('article[data-task-id]').forEach((card) => {
+          const task = state.tasks.find((t) => t.id === card.getAttribute('data-task-id'));
+          if (!task || task.status === 'completed') return;
+          const info = getTimerInfo(task);
+          const countdown = card.querySelector('[data-live="countdown"]');
+          if (countdown && task.isFocused && state.focusStalled) {
+            // static "Check" state while the focus timer is paused
+          } else if (countdown && !task.isAlerting && task.isFocused) {
+            countdown.textContent = formatSeconds(state.focusElapsedSeconds || 0);
+          } else if (countdown && !task.isAlerting && task.status !== 'paused') {
+            countdown.textContent = formatSeconds(info.remSecs);
+          }
+          const bar = card.querySelector('[data-live="bar"]');
+          if (bar) bar.style.width = (task.isAlerting ? 100 : info.timerPct) + '%';
+          const neglectEl = card.querySelector('[data-live="neglect"]');
+          if (neglectEl && !task.isFocused) neglectEl.textContent = getNeglectInfo(task.lastCheckedAt).text;
+        });
+      }
+
+      // ---------------------------------------------------------------
+      // Drag to reorder: pointer-driven, placeholder + FLIP animations
+      // ---------------------------------------------------------------
+      const DRAG_THRESHOLD_PX = 6;
+      const DRAG_FLIP_MS = 260;
+      const DRAG_DROP_MS = 240;
+      const DRAG_EASE = 'cubic-bezier(0.2, 0, 0, 1)';
+      const DRAG_EDGE_PX = 70;
+      let drag = null;
+      let pendingDragRender = false;
+
+      function getDragColumns() {
+        const container = document.getElementById('tasks-container');
+        if (!container) return [];
+        if (state.viewMode === 'list') return [container];
+        return Array.from(container.querySelectorAll(':scope > .masonry-col'));
+      }
+
+      // Layout position ignoring transforms, so cards that are mid-animation do not cause flicker
+      function getLayoutTop(el, col) {
+        return col.getBoundingClientRect().top + (el.offsetTop - col.offsetTop);
+      }
+
+      // FLIP: move things in the DOM, then animate every card from its old spot to its new one
+      function animateReflow(mutate) {
+        const cards = Array.from(document.querySelectorAll('#tasks-container article[data-task-id]'));
+        const before = new Map(cards.map((c) => [c, c.getBoundingClientRect()]));
+        mutate();
+        cards.forEach((c) => {
+          const a = before.get(c);
+          c.style.transition = 'none';
+          c.style.transform = 'none';
+          const b = c.getBoundingClientRect();
+          const dx = a.left - b.left;
+          const dy = a.top - b.top;
+          if (Math.abs(dx) < 0.5 && Math.abs(dy) < 0.5) {
+            c.style.transform = '';
+            c.style.transition = '';
+            return;
+          }
+          c.style.transform = `translate(${dx}px, ${dy}px)`;
+          void c.offsetHeight;
+          c.style.transition = `transform ${DRAG_FLIP_MS}ms ${DRAG_EASE}`;
+          c.style.transform = '';
+        });
+      }
+
+      function onCardPointerDown(e) {
+        if (e.button !== 0 || drag) return;
+        if (state.filter === 'completed') return;
+        const card = e.target.closest('#tasks-container article[data-task-id]');
+        if (!card) return;
+        if (e.target.closest('button, input, textarea, select, label, a')) return;
+        drag = { card, startX: e.clientX, startY: e.clientY, x: e.clientX, y: e.clientY, started: false };
+      }
+
+      function startDrag() {
+        const card = drag.card;
+        card.style.transition = 'none';
+        card.style.transform = '';
+        const rect = card.getBoundingClientRect();
+        const placeholder = document.createElement('div');
+        placeholder.className = 'drag-placeholder';
+        placeholder.style.height = rect.height + 'px';
+        card.parentNode.insertBefore(placeholder, card);
+        document.body.appendChild(card);
+        Object.assign(card.style, {
+          position: 'fixed',
+          left: rect.left + 'px',
+          top: rect.top + 'px',
+          width: rect.width + 'px',
+          margin: '0',
+          zIndex: '60',
+          pointerEvents: 'none',
+          transition: `scale 180ms ${DRAG_EASE}, box-shadow 180ms ease`,
+          boxShadow: '0 12px 28px -14px rgba(0, 0, 0, 0.6)'
+        });
+        card.classList.add('is-dragging');
+        requestAnimationFrame(() => { card.style.scale = '1.03'; });
+        Object.assign(drag, {
+          started: true,
+          placeholder,
+          originLeft: rect.left,
+          originTop: rect.top,
+          height: rect.height,
+          grabDY: drag.startY - rect.top
+        });
+        document.body.classList.add('is-drag-active');
+        drag.raf = requestAnimationFrame(dragFrame);
+      }
+
+      function dragFrame() {
+        if (!drag || !drag.started || drag.dropping) return;
+        drag.card.style.translate = `${drag.x - drag.startX}px ${drag.y - drag.startY}px`;
+        // Auto-scroll near the top/bottom edge of the window
+        let step = 0;
+        if (drag.y < DRAG_EDGE_PX) step = -Math.ceil((DRAG_EDGE_PX - drag.y) / 4);
+        else if (drag.y > window.innerHeight - DRAG_EDGE_PX) step = Math.ceil((drag.y - (window.innerHeight - DRAG_EDGE_PX)) / 4);
+        if (step) window.scrollBy(0, step);
+        updatePlaceholder();
+        drag.raf = requestAnimationFrame(dragFrame);
+      }
+
+      function updatePlaceholder() {
+        const cols = getDragColumns();
+        if (!cols.length) return;
+        // Column: the one under the pointer, else the nearest one
+        let col = cols[0];
+        let best = Infinity;
+        cols.forEach((c) => {
+          const r = c.getBoundingClientRect();
+          const d = drag.x < r.left ? r.left - drag.x : (drag.x > r.right ? drag.x - r.right : 0);
+          if (d < best) { best = d; col = c; }
+        });
+        // Slot: before the first card whose middle is below the dragged card's middle
+        const centerY = drag.y - drag.grabDY + drag.height / 2;
+        let before = null;
+        for (const el of Array.from(col.children)) {
+          if (el === drag.placeholder || !el.matches('article[data-task-id]')) continue;
+          if (centerY < getLayoutTop(el, col) + el.offsetHeight / 2) { before = el; break; }
+        }
+        if (drag.placeholder.parentNode === col && drag.placeholder.nextElementSibling === before) return;
+        animateReflow(() => { col.insertBefore(drag.placeholder, before); });
+      }
+
+      function commitDragLayout() {
+        const cols = state.viewMode === 'list' ? 1 : getMasonryColumnCount();
+        const key = String(cols);
+        const sequence = [];
+        getDragColumns().forEach((col, colIndex) => {
+          Array.from(col.children).forEach((el) => {
+            if (!el.matches('article[data-task-id]')) return;
+            const task = state.tasks.find((t) => t.id === el.getAttribute('data-task-id'));
+            if (!task) return;
+            task.layout = Object.assign({}, task.layout, { [key]: colIndex });
+            sequence.push(task);
+          });
+        });
+        // Re-order only the slots the visible cards occupy; hidden (filtered-out) tasks keep their place
+        const slots = sequence.map((t) => state.tasks.indexOf(t)).sort((a, b) => a - b);
+        const reordered = state.tasks.slice();
+        slots.forEach((slot, k) => { reordered[slot] = sequence[k]; });
+        state.tasks = reordered;
+      }
+
+      function finishDrag() {
+        const session = drag;
+        session.dropping = true;
+        cancelAnimationFrame(session.raf);
+        const { card, placeholder } = session;
+        const target = placeholder.getBoundingClientRect();
+        card.style.transition = [
+          `translate ${DRAG_DROP_MS}ms ${DRAG_EASE}`,
+          `scale ${DRAG_DROP_MS}ms ${DRAG_EASE}`,
+          `box-shadow ${DRAG_DROP_MS}ms ease`
+        ].join(', ');
+        card.style.translate = `${target.left - session.originLeft}px ${target.top - session.originTop}px`;
+        card.style.scale = '1';
+        card.style.boxShadow = '';
+
+        let settled = false;
+        const settle = () => {
+          if (settled) return;
+          settled = true;
+          placeholder.parentNode.insertBefore(card, placeholder);
+          placeholder.remove();
+          ['position', 'left', 'top', 'width', 'margin', 'zIndex', 'pointerEvents', 'transition', 'translate', 'scale', 'boxShadow', 'transform']
+            .forEach((prop) => { card.style[prop] = ''; });
+          card.classList.remove('is-dragging');
+          document.body.classList.remove('is-drag-active');
+          commitDragLayout();
+          drag = null;
+          saveState();
+          lastRenderKey = getRenderKey(); // the DOM already matches the new order; no rebuild needed
+          if (pendingDragRender) {
+            pendingDragRender = false;
+            setTimeout(renderTasks, DRAG_FLIP_MS);
+          }
+        };
+        card.addEventListener('transitionend', (ev) => {
+          if (ev.propertyName === 'translate') settle();
+        });
+        setTimeout(settle, DRAG_DROP_MS + 80);
+
+        // Swallow the click that the browser fires right after releasing the drag
+        const swallow = (ev) => { ev.stopPropagation(); ev.preventDefault(); };
+        window.addEventListener('click', swallow, true);
+        setTimeout(() => window.removeEventListener('click', swallow, true), 60);
+      }
+
+      function setupDragReorder() {
+        const container = document.getElementById('tasks-container');
+        container.addEventListener('pointerdown', onCardPointerDown);
+        window.addEventListener('pointermove', (e) => {
+          if (!drag || drag.dropping) return;
+          drag.x = e.clientX;
+          drag.y = e.clientY;
+          if (!drag.started && Math.hypot(drag.x - drag.startX, drag.y - drag.startY) >= DRAG_THRESHOLD_PX) {
+            startDrag();
+          }
+        });
+        const end = () => {
+          if (!drag || drag.dropping) return;
+          if (!drag.started) {
+            drag = null;
+            return;
+          }
+          finishDrag();
+        };
+        window.addEventListener('pointerup', end);
+        window.addEventListener('pointercancel', end);
+        window.addEventListener('blur', end);
+      }
+
+      // ---------------------------------------------------------------
+      // Keep the screen on while fullscreen (Screen Wake Lock API)
+      // ---------------------------------------------------------------
+      let wakeLock = null;
+      let wakeLockBusy = false;
+      let lastFullscreen = false;
+
+      function isFullscreenMode() {
+        if (document.fullscreenElement) return true;
+        // Browser F11 fullscreen does not set fullscreenElement; compare against the screen size
+        return window.innerHeight >= screen.height - 2 && window.innerWidth >= screen.width - 2;
+      }
+
+      async function syncWakeLock(announce) {
+        if (wakeLockBusy) return;
+        const want = state.keepAwake !== false && isFullscreenMode() && document.visibilityState === 'visible';
+        wakeLockBusy = true;
+        try {
+          if (want && !wakeLock) {
+            if (!('wakeLock' in navigator)) {
+              if (announce && document.fullscreenElement) showToast(tr('toast.awakeUnsupported'));
+              return;
+            }
+            try {
+              const lock = await navigator.wakeLock.request('screen');
+              wakeLock = lock;
+              lock.addEventListener('release', () => {
+                if (wakeLock === lock) wakeLock = null;
+              });
+              if (announce) showToast(tr('toast.awakeOn'));
+            } catch (err) {
+              wakeLock = null;
+              if (announce && document.fullscreenElement) showToast(tr('toast.awakeFailed'));
+            }
+          } else if (!want && wakeLock) {
+            const lock = wakeLock;
+            wakeLock = null;
+            try { await lock.release(); } catch (err) { /* already released */ }
+          }
+        } finally {
+          wakeLockBusy = false;
+        }
+      }
+
+      function onFullscreenMaybeChanged() {
+        const fs = isFullscreenMode();
+        const entered = fs && !lastFullscreen;
+        lastFullscreen = fs;
+        syncWakeLock(entered);
+      }
+
+      function setupWakeLock() {
+        document.addEventListener('fullscreenchange', onFullscreenMaybeChanged);
+        window.addEventListener('resize', onFullscreenMaybeChanged);
+        // The browser drops the lock when the page is hidden; take it again when it comes back
+        document.addEventListener('visibilitychange', () => syncWakeLock(false));
+        // Already fullscreen when the page opens: keep the screen on quietly, no message
+        lastFullscreen = isFullscreenMode();
+        syncWakeLock(false);
+      }
+
+      // ---------------------------------------------------------------
+      // Focus time accounting (only while the page is open)
+      // ---------------------------------------------------------------
+      const FOCUS_LIMIT_SECONDS = 2 * 60 * 60; // continuous focus before the timer pauses
+      const MAX_TICK_GAP_SECONDS = 65; // longer gaps (sleep, frozen tab) are not counted beyond this
+      const FOCUS_LOG_DAYS = 30;
+      let lastTickAt = Date.now();
+      let lastAutoSaveAt = Date.now();
+
+      function dayKey(d) {
+        const pad = (n) => String(n).padStart(2, '0');
+        return `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`;
+      }
+
+      function getFocusedTask() {
+        return state.tasks.find((t) => t.isFocused && t.status !== 'completed') || null;
+      }
+
+      function resetFocusSession() {
+        state.focusElapsedSeconds = 0;
+        state.focusSessionSeconds = 0;
+        state.focusStalled = false;
+        state.focusPendingSeconds = 0;
+      }
+
+      // Check-in on the focused project: confirms you were working, credits any time held after the
+      // 2-hour pause, and starts a fresh continuous-focus count
+      function confirmFocus(task) {
+        if (!task || !task.isFocused) return;
+        const pending = state.focusStalled ? (state.focusPendingSeconds || 0) : 0;
+        if (pending > 0) {
+          addFocusTime(task, pending);
+          state.focusElapsedSeconds = (state.focusElapsedSeconds || 0) + pending;
+        }
+        state.focusPendingSeconds = 0;
+        state.focusStalled = false;
+        state.focusSessionSeconds = 0;
+        lastTickAt = Date.now();
+      }
+
+      // First open of a new day (or crossing midnight with the page open): fresh daily counters,
+      // and every repeating project asks for a check-in
+      function startNewDayIfNeeded(nowMs) {
+        const today = dayKey(new Date(nowMs));
+        if (state.lastActiveDay === today) return false;
+        const hadPreviousDay = Boolean(state.lastActiveDay);
+        state.lastActiveDay = today;
+        state.focusSessionSeconds = 0;
+        state.focusStalled = false;
+        state.focusPendingSeconds = 0;
+        state.todayCheckCount = 0;
+        state.logs = [];
+        if (hadPreviousDay) {
+          state.tasks.forEach((t) => {
+            if (t.status === 'active' && t.reminderType === 'loop') t.isAlerting = true;
+          });
+        }
+        return true;
+      }
+
+      function addFocusTime(task, seconds) {
+        const key = dayKey(new Date());
+        if (!state.focusLog || typeof state.focusLog !== 'object') state.focusLog = {};
+        const day = state.focusLog[key] || (state.focusLog[key] = {});
+        const entry = day[task.id] || (day[task.id] = { s: 0, n: task.name });
+        entry.s += seconds;
+        entry.n = task.name;
+        const days = Object.keys(state.focusLog).sort();
+        while (days.length > FOCUS_LOG_DAYS) delete state.focusLog[days.shift()];
+      }
+
+      function formatDuration(sec) {
+        const total = Math.floor(sec || 0);
+        if (total < 60) return tr('dur.lt1');
+        const h = Math.floor(total / 3600);
+        const m = Math.floor((total % 3600) / 60);
+        return h > 0 ? tr('dur.hm', { h, m: String(m).padStart(2, '0') }) : tr('dur.m', { m });
+      }
+
+      // Called once per tick with the real time elapsed since the previous tick
+      function accrueFocus(nowMs) {
+        const delta = Math.min(Math.max(0, (nowMs - lastTickAt) / 1000), MAX_TICK_GAP_SECONDS);
+        lastTickAt = nowMs;
+        if (startNewDayIfNeeded(nowMs)) renderTasks();
+        const focused = getFocusedTask();
+        if (!focused || delta <= 0) return false;
+        if (state.focusStalled) {
+          // Paused at the limit: hold the time until a check-in confirms it
+          state.focusPendingSeconds = (state.focusPendingSeconds || 0) + delta;
+          return false;
+        }
+        const room = Math.max(0, FOCUS_LIMIT_SECONDS - (state.focusSessionSeconds || 0));
+        const counted = Math.min(delta, room);
+        state.focusElapsedSeconds = (state.focusElapsedSeconds || 0) + counted;
+        state.focusSessionSeconds = (state.focusSessionSeconds || 0) + counted;
+        addFocusTime(focused, counted);
+        if (state.focusSessionSeconds >= FOCUS_LIMIT_SECONDS) {
+          state.focusStalled = true;
+          state.focusPendingSeconds = delta - counted;
+          addPatrolLog(focused.name, tr('log.focusStalled'));
+          return true;
+        }
+        return false;
+      }
+
+      function resetTimersOnOpen() {
+        state.focusElapsedSeconds = 0;
+        state.tasks.forEach((t) => {
+          if (t.status === 'completed') return;
+          t.isAlerting = false;
+          if (t.reminderType === 'loop') t.remainingSeconds = getTimerInfo(t).effectiveMinutes * 60;
+        });
+      }
+
+      function renderStatsModal() {
+        const listEl = document.getElementById('stats-list');
+        const totalEl = document.getElementById('stats-total');
+        if (!listEl) return;
+        const day = (state.focusLog || {})[dayKey(new Date())] || {};
+        const focused = getFocusedTask();
+        const rows = Object.keys(day).map((id) => {
+          const task = state.tasks.find((t) => t.id === id);
+          return { id, name: task ? task.name : day[id].n, s: day[id].s, now: Boolean(focused && focused.id === id && !state.focusStalled) };
+        }).filter((r) => r.s >= 1).sort((a, b) => b.s - a.s);
+        const total = rows.reduce((sum, r) => sum + r.s, 0);
+        totalEl.textContent = rows.length ? tr('stats.total', { t: formatDuration(total) }) : '';
+        if (!rows.length) {
+          listEl.innerHTML = '<div class="text-slate-400 text-center py-8">' + escapeHtml(tr('stats.empty')) + '</div>';
+          return;
+        }
+        const max = rows[0].s;
+        listEl.innerHTML = rows.map((r) => `
+          <div class="space-y-1.5">
+            <div class="flex items-center justify-between gap-3">
+              <div class="flex items-center gap-2 min-w-0">
+                <span class="truncate text-sm text-slate-100">${escapeHtml(r.name)}</span>
+                ${r.now ? `<span class="shrink-0 px-1.5 py-0.5 rounded-md text-[10px] font-semibold bg-sky-500/15 text-sky-200 border border-sky-400/40">${escapeHtml(tr('stats.now'))}</span>` : ''}
+              </div>
+              <div class="shrink-0 flex items-baseline gap-2">
+                <span class="font-mono-num text-sm text-slate-100">${escapeHtml(formatDuration(r.s))}</span>
+                <span class="font-mono-num text-[11px] text-slate-500 w-9 text-right">${Math.round((r.s / total) * 100)}%</span>
+              </div>
+            </div>
+            <div class="h-1.5 rounded-md bg-white/5 overflow-hidden">
+              <div class="h-full rounded-md bg-sky-400" style="width: ${Math.max(2, Math.round((r.s / max) * 100))}%"></div>
+            </div>
+          </div>
+        `).join('');
+      }
+
+      // Compact view: cards the user clicked open (kept for this page session)
+      const expandedCards = new Set();
+      function toggleCardExpanded(card) {
+        const id = card.getAttribute('data-task-id');
+        if (expandedCards.has(id)) expandedCards.delete(id);
+        else expandedCards.add(id);
+        card.classList.toggle('is-expanded', expandedCards.has(id));
+        lastIdleToggleAt = Date.now(); // let the unfold animation finish before any rebuild
+      }
+
+      function collapseAllCards() {
+        if (!expandedCards.size) return;
+        expandedCards.clear();
+        document.querySelectorAll('article.is-expanded').forEach((card) => card.classList.remove('is-expanded'));
+        lastIdleToggleAt = Date.now();
+      }
+
+      // Masonry: same column counts as the old grid breakpoints (md = 768px, 2xl = 1536px)
+      let lastMasonryCols = 0;
+      function getMasonryColumnCount() {
+        const w = window.innerWidth;
+        if (state.viewMode === 'list') return 1;
+        if (state.viewMode === 'hud') return w >= 768 ? 2 : 1;
+        if (w >= 1536) return 3;
+        if (w >= 768) return 2;
+        return 1;
+      }
+
+      function renderMasonry(container, tasks) {
+        if (state.viewMode === 'list') {
+          container.innerHTML = tasks.map((task) => buildTaskCardHtml(task)).join('');
+          lastMasonryCols = 1;
+          return;
+        }
+        const cols = getMasonryColumnCount();
+        const key = String(cols);
+        container.innerHTML = '';
+        const columns = [];
+        for (let i = 0; i < cols; i++) {
+          const col = document.createElement('div');
+          col.className = 'masonry-col';
+          container.appendChild(col);
+          columns.push(col);
+        }
+        // Column positions are remembered per column count (task.layout["3"] = column index).
+        // With no remembered layout yet, each card goes into the currently shortest column.
+        // Once a layout exists, cards without a position (e.g. new projects) start in the first column.
+        const hasCol = (t) => t.layout && Number.isInteger(t.layout[key]) && t.layout[key] >= 0 && t.layout[key] < cols;
+        const established = tasks.some(hasCol);
+        let assigned = false;
+        const tpl = document.createElement('template');
+        tasks.forEach((task) => {
+          tpl.innerHTML = buildTaskCardHtml(task).trim();
+          const card = tpl.content.firstElementChild;
+          let colIndex = 0;
+          if (hasCol(task)) {
+            colIndex = task.layout[key];
+          } else {
+            if (!established) {
+              columns.forEach((col, idx) => {
+                if (col.offsetHeight < columns[colIndex].offsetHeight - 1) colIndex = idx;
+              });
+            }
+            task.layout = Object.assign({}, task.layout, { [key]: colIndex });
+            assigned = true;
+          }
+          columns[colIndex].appendChild(card);
+        });
+        lastMasonryCols = cols;
+        if (assigned) saveState();
+      }
+
+      function renderTasks() {
+        if (drag && drag.started) {
+          pendingDragRender = true;
+          updateAlertBannersAndCounts();
+          return;
+        }
+        updateAlertBannersAndCounts();
+        lastRenderKey = getRenderKey();
+
+        const container = document.getElementById('tasks-container');
+        if (!container) return;
+
+        // Update container layout classes based on viewMode
+        if (state.viewMode === 'list') {
+          container.className = 'flex flex-col gap-3';
+        } else if (state.viewMode === 'hud') {
+          container.className = 'masonry masonry-hud';
+        } else {
+          container.className = 'masonry';
+        }
+        container.classList.toggle('can-drag', state.filter !== 'completed');
+
+        // Update View mode buttons
+        ['grid', 'list', 'hud'].forEach((m) => {
+          const btn = document.getElementById('btn-view-' + m);
+          if (btn) {
+            if (state.viewMode === m) {
+              btn.className = 'px-2.5 py-1 rounded-lg text-xs font-semibold bg-sky-500/25 text-sky-300 transition';
+            } else {
+              btn.className = 'px-2.5 py-1 rounded-lg text-xs font-medium text-slate-400 hover:text-slate-200 transition';
+            }
+          }
+        });
+
+        // Filter tasks
+        const filtered = getFilteredTasks();
+        document.querySelectorAll('.filter-btn').forEach((b) => {
+          b.className = (b.getAttribute('data-filter') === state.filter)
+            ? 'filter-btn px-3 py-1 rounded-lg font-semibold bg-sky-500/20 text-sky-300 border border-sky-400/30 transition'
+            : 'filter-btn px-3 py-1 rounded-lg font-medium text-slate-300 hover:bg-white/5 border border-transparent transition';
+        });
+
+        if (filtered.length === 0) {
+          container.innerHTML = `
+            <div class="w-full glass-panel rounded-xl p-10 text-center space-y-3">
+              <div class="text-base font-bold text-slate-200">${state.filter === 'completed' ? tr('empty.completed') : tr('empty.none')}</div>
+            </div>
+          `;
+          return;
+        }
+
+        renderMasonry(container, filtered);
+      }
+
+      function buildCompletedCardHtml(task) {
+        const subs = task.subtasks || [];
+        const totalSub = subs.length;
+        const doneSub = subs.filter((s) => s.done).length;
+        const pad = (n) => String(n).padStart(2, '0');
+        const d = task.completedAt ? new Date(task.completedAt) : null;
+        const when = d ? `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())} ${pad(d.getHours())}:${pad(d.getMinutes())}` : '';
+        return `
+          <article class="glass-card rounded-xl p-4 sm:p-5 flex flex-col justify-between gap-3 ${expandedCards.has(task.id) ? 'is-expanded' : ''}" data-task-id="${escapeHtml(task.id)}">
+            <div class="space-y-2">
+              <div class="flex flex-wrap items-center gap-1.5">
+                <span class="px-2 py-0.5 rounded-md text-[11px] font-semibold border border-white/15 bg-slate-800/70 text-slate-300">${escapeHtml(task.tag || tr('tag.general'))}</span>
+                <span class="px-2 py-0.5 rounded-md text-[11px] font-semibold border bg-white/5 text-slate-300 border-white/10">${tr('card.doneBadge')}${when ? ' · ' + when : ''}</span>
+              </div>
+              <h3 class="text-base font-bold text-slate-200 leading-snug truncate" title="${escapeHtml(task.name)}">${escapeHtml(task.name)}</h3>
+              ${task.note ? `<div class="text-xs text-slate-400 truncate">📍 ${escapeHtml(task.note)}</div>` : ''}
+              ${totalSub > 0 ? `
+                <div class="space-y-1 max-h-32 overflow-y-auto pr-1">
+                  ${subs.map((s) => `<div class="text-xs truncate ${s.done ? 'line-through text-slate-500' : 'text-slate-300'}">${s.done ? '✓' : '○'} ${escapeHtml(s.text)}</div>`).join('')}
+                </div>
+              ` : ''}
+            </div>
+            <div class="pt-3 border-t border-white/10 flex items-center justify-between gap-2 text-xs">
+              <span class="text-slate-400 font-mono-num">${totalSub ? tr('card.subtaskCount', { done: doneSub, total: totalSub }) : ''}</span>
+              <div class="idle-fx flex items-center gap-1">
+                <button type="button" data-action="reopen" data-id="${escapeHtml(task.id)}" class="px-3 py-1.5 rounded-lg bg-sky-500/20 hover:bg-sky-500/30 text-sky-300 border border-sky-400/30 font-semibold transition" title="${tr('card.reopenTitle')}">${tr('card.reopen')}</button>
+                <button type="button" data-action="delete-task" data-id="${escapeHtml(task.id)}" class="p-1.5 rounded-lg bg-slate-800/70 hover:bg-white/10 text-slate-400 hover:text-white border border-white/10 transition" title="${tr('card.delete')}">${icon('trash')}</button>
+              </div>
+            </div>
+          </article>
+        `;
+      }
+
+      function buildTaskCardHtml(task) {
+        if (task.status === 'completed') return buildCompletedCardHtml(task);
+        // Focus paused at the 2-hour limit: render the focused card in the "needs a check" style
+        const focusStalled = task.isFocused && state.focusStalled;
+        if (focusStalled && !task.isAlerting) task = Object.assign({}, task, { isAlerting: true });
+        const totalSub = task.subtasks.length;
+        const doneSub = task.subtasks.filter((s) => s.done).length;
+        const pctSub = totalSub > 0 ? Math.round((doneSub / totalSub) * 100) : 0;
+
+        // Effective interval & progress calculation
+        const { effectiveMinutes, remSecs, timerPct } = getTimerInfo(task);
+
+        // The focused card is being worked on right now, so it never shows a 'since last check' badge
+        const neglect = task.isFocused
+          ? { text: '', badgeClass: 'hidden' }
+          : getNeglectInfo(task.lastCheckedAt);
+
+        const tagBadge = 'bg-white/5 text-slate-300 border-white/10';
+
+        const cardAlertClass = task.isAlerting ? 'card-alert-active' : (task.isFocused ? 'focused-card-glow' : '');
+        const scheduleDesc = task.reminderType === 'loop'
+          ? tr('mode.every', { n: effectiveMinutes }) + (state.globalOverride ? tr('mode.global') : '')
+          : tr('mode.daily', { time: escapeHtml(task.scheduledTime) });
+        // Focused card: show elapsed focus time; repeating reminders are suspended, daily ones still fire
+        const modeDesc = focusStalled
+          ? tr('mode.focusStalled')
+          : task.isFocused
+          ? tr('mode.focusing') + (task.reminderType === 'scheduled' ? ' · ' + scheduleDesc : '')
+          : scheduleDesc;
+        const timerText = task.isFocused
+          ? formatSeconds(state.focusElapsedSeconds || 0)
+          : formatSeconds(remSecs);
+
+        // Zen HUD Mode (Ultra-clean large countdowns for secondary screen distance viewing)
+        if (state.viewMode === 'hud') {
+          return `
+            <article class="glass-card rounded-xl p-6 flex flex-col justify-between gap-4 ${cardAlertClass} ${expandedCards.has(task.id) ? 'is-expanded' : ''}" data-task-id="${escapeHtml(task.id)}">
+              <div class="flex items-start justify-between gap-3">
+                <div>
+                  <div class="flex items-center gap-2 mb-1.5">
+                    <span class="px-2.5 py-0.5 rounded-md text-xs font-semibold border ${tagBadge}">${escapeHtml(task.tag || tr('tag.general'))}</span>
+                    ${task.isFocused ? `<span class="px-2.5 py-0.5 rounded-md text-xs font-bold bg-sky-500 text-slate-950">${tr('card.focus')}</span>` : ''}
+                    <span data-live="neglect" class="px-2.5 py-0.5 rounded-md text-xs border ${neglect.badgeClass}">${neglect.text}</span>
+                  </div>
+                  <h3 class="text-xl font-extrabold text-white tracking-tight">${escapeHtml(task.name)}</h3>
+                </div>
+                <div class="text-right">
+                  ${task.isAlerting ? `
+                  <button type="button" data-action="check-in" data-id="${escapeHtml(task.id)}" title="${tr('card.checkInTitle')}"
+                    class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-amber-400 hover:bg-amber-300 text-slate-950 text-2xl font-bold transition">
+                    <span data-live="countdown" class="inline-flex items-center gap-2">${icon('check', 24)}${tr('card.checkIn')}</span>
+                  </button>` : `
+                  <div data-live="countdown" class="text-3xl sm:text-4xl font-black font-mono-num ${task.isFocused ? 'text-sky-100' : 'text-sky-300'}">
+                    ${task.isFocused ? timerText : (task.status === 'paused' ? tr('card.paused') : timerText)}
+                  </div>`}
+                  <div class="text-xs text-slate-400 mt-1">${modeDesc}</div>
+                </div>
+              </div>
+
+              ${task.note ? `
+                <div class="bg-slate-950/70 rounded-lg px-3.5 py-2.5 border border-white/10 text-xs text-slate-200 flex items-center gap-2">
+                  <span>${tr('card.noteLabel')}</span>
+                  <span class="font-medium">${escapeHtml(task.note)}</span>
+                </div>
+              ` : ''}
+
+              <div class="flex items-center justify-between gap-3 pt-2 border-t border-white/10">
+                <div class="text-xs text-slate-300">
+                  ${totalSub ? `${tr('card.subtasks')} <strong class="text-white font-mono-num">${doneSub}/${totalSub}</strong>` : ''}
+                </div>
+                <div class="idle-fx flex items-center gap-2">
+                  <button type="button" data-action="check-in" data-id="${escapeHtml(task.id)}" class="px-4 py-2 rounded-lg ${task.isAlerting ? 'bg-amber-400 hover:bg-amber-300 text-slate-950' : 'bg-white/5 hover:bg-white/10 text-slate-100 border border-white/10'} text-xs font-bold transition">
+                    ${tr('card.checkIn')}
+                  </button>
+                  <button type="button" data-action="snooze" data-id="${escapeHtml(task.id)}" class="px-3 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-medium border border-white/10 transition">
+                    +5m
+                  </button>
+                  <button type="button" data-action="complete" data-id="${escapeHtml(task.id)}" class="px-3 py-2 rounded-lg bg-white/5 hover:bg-white/10 text-slate-200 text-xs font-semibold border border-white/10 transition" title="${tr('card.doneTitle')}">
+                    ${tr('card.done')}
+                  </button>
+                </div>
+              </div>
+            </article>
+          `;
+        }
+
+        // Standard Card Grid or Compact List View
+        return `
+          <article class="glass-card rounded-xl p-4 sm:p-5 flex flex-col justify-between gap-3.5 ${cardAlertClass} ${expandedCards.has(task.id) ? 'is-expanded' : ''}" data-task-id="${escapeHtml(task.id)}">
+            <!-- Top Section: Tags, Title & Live Countdown Box -->
+            <div class="space-y-3">
+              <div class="flex items-start justify-between gap-2">
+                <div class="space-y-1 flex-1 min-w-0">
+                  <div class="flex flex-wrap items-center gap-1.5">
+                    <span class="px-2 py-0.5 rounded-md text-[11px] font-semibold border ${tagBadge}">
+                      ${escapeHtml(task.tag || tr('tag.general'))}
+                    </span>
+                    ${task.isFocused ? `
+                      <span class="px-2 py-0.5 rounded-md text-[11px] font-bold bg-sky-500 text-slate-950 ">
+                        ${tr('card.focus')}
+                      </span>
+                    ` : ''}
+                    <span data-live="neglect" class="px-2 py-0.5 rounded-md text-[11px] border ${neglect.badgeClass}">
+                      ${neglect.text}
+                    </span>
+                  </div>
+                  <h3 class="text-base font-bold text-white leading-snug truncate" title="${escapeHtml(task.name)}">
+                    ${escapeHtml(task.name)}
+                  </h3>
+                </div>
+
+                <!-- Right Countdown Widget (turns into the Check in button when the project is due) -->
+                ${task.isAlerting ? `
+                <button type="button" data-action="check-in" data-id="${escapeHtml(task.id)}" title="${tr('card.checkInTitle')}"
+                  class="flex flex-col items-end shrink-0 px-3 py-1.5 rounded-lg bg-amber-400 hover:bg-amber-300 text-slate-950 transition">
+                  <div class="text-[10px] text-slate-950/70">${modeDesc}</div>
+                  <div data-live="countdown" class="inline-flex items-center gap-1.5 text-lg font-bold">${icon('check', 16)}${tr('card.checkIn')}</div>
+                </button>` : `
+                <div class="flex flex-col items-end shrink-0 px-3 py-1.5 rounded-lg border ${task.isFocused ? 'bg-sky-500/20 border-sky-300/50' : 'bg-slate-950/75 border-white/10'}">
+                  <div class="text-[10px] text-slate-400">${modeDesc}</div>
+                  <div data-live="countdown" class="text-lg font-extrabold font-mono-num tracking-tight ${task.isFocused ? 'text-sky-100' : (task.status === 'paused' ? 'text-slate-500' : 'text-sky-300')}">
+                    ${task.isFocused ? timerText : (task.status === 'paused' ? tr('card.pausedIcon') : timerText)}
+                  </div>
+                </div>`}
+              </div>
+
+              <!-- Timer Progress Bar (not shown while the card is the focus: it counts up) -->
+              ${task.isFocused && !task.isAlerting ? '' : `
+              <div class="w-full h-1.5 bg-slate-950/80 rounded-md overflow-hidden">
+                <div data-live="bar" class="h-full ${task.isAlerting ? 'bg-amber-400' : 'bg-sky-400'} transition-all duration-500" style="width: ${task.isAlerting ? 100 : timerPct}%"></div>
+              </div>`}
+
+              <!-- Context Breadcrumb Note -->
+              <div class="${task.note ? '' : 'idle-fx idle-fx-y '}bg-slate-950/65 rounded-lg p-2.5 border border-white/10 flex items-center gap-2">
+                <span class="text-slate-400 text-xs shrink-0" title="${tr('card.noteTitle')}">${tr('card.noteLabel')}</span>
+                <input
+                  type="text"
+                  data-action="update-note"
+                  data-id="${escapeHtml(task.id)}"
+                  value="${escapeHtml(task.note || '')}"
+                  placeholder="${tr('card.notePh')}"
+                  class="w-full bg-transparent text-xs text-slate-100 placeholder-slate-500 focus:outline-none focus:text-white"
+                />
+              </div>
+
+              <!-- Subtasks Checklist Section -->
+              <div class="space-y-2 pt-1">
+                ${totalSub ? `
+                <div class="flex items-center justify-between text-xs">
+                  <span class="font-semibold text-slate-300">${tr('card.subtasks')}</span>
+                  <span class="font-mono-num text-slate-400">${doneSub}/${totalSub}</span>
+                </div>` : ''}
+
+                <!-- Subtask items -->
+                ${totalSub ? `
+                <div class="space-y-1.5 max-h-40 overflow-y-auto pr-1">
+                  ${task.subtasks.map((sub) => `
+                    <div class="group flex items-center justify-between gap-2 px-2.5 py-1.5 rounded-lg bg-slate-900/55 hover:bg-slate-900/90 border border-white/5 transition text-xs">
+                      <label class="flex items-center gap-2 flex-1 min-w-0 cursor-pointer">
+                        <input
+                          type="checkbox"
+                          data-action="toggle-subtask"
+                          data-task-id="${escapeHtml(task.id)}"
+                          data-sub-id="${escapeHtml(sub.id)}"
+                          ${sub.done ? 'checked' : ''}
+                          class="w-3.5 h-3.5 accent-sky-500 rounded cursor-pointer shrink-0"
+                        />
+                        <span class="truncate ${sub.done ? 'line-through text-slate-500' : 'text-slate-200'}">${escapeHtml(sub.text)}</span>
+                      </label>
+                      <button
+                        type="button"
+                        data-action="delete-subtask"
+                        data-task-id="${escapeHtml(task.id)}"
+                        data-sub-id="${escapeHtml(sub.id)}"
+                        class="opacity-0 group-hover:opacity-100 text-slate-500 hover:text-slate-200 px-1 transition"
+                        title="${tr('card.delete')}"
+                      ><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+                    </div>
+                  `).join('')}
+                </div>` : ''}
+
+                <!-- Quick Add Subtask Input -->
+                <div class="idle-fx idle-fx-y flex items-center gap-1.5 pt-0.5">
+                  <input
+                    type="text"
+                    id="input-sub-${escapeHtml(task.id)}"
+                    data-action="subtask-input-keydown"
+                    data-id="${escapeHtml(task.id)}"
+                    placeholder="${tr('card.addSubPh')}"
+                    class="flex-1 px-2.5 py-1.5 rounded-lg bg-slate-950/60 border border-white/10 text-xs text-slate-200 placeholder-slate-500 focus:outline-none focus:border-sky-400/60"
+                  />
+                  <button
+                    type="button"
+                    data-action="add-subtask"
+                    data-id="${escapeHtml(task.id)}"
+                    class="px-2.5 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-medium border border-white/10 transition"
+                  >${tr('card.add')}</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card Footer Actions -->
+            <div class="card-footer idle-fx idle-fx-y pt-3 border-t border-white/10 flex flex-wrap items-center justify-between gap-2 text-xs">
+              <div class="flex items-center gap-1.5">
+                <button
+                  type="button"
+                  data-action="check-in"
+                  data-id="${escapeHtml(task.id)}"
+                  class="px-3 py-1.5 rounded-lg font-bold transition ${
+ task.isAlerting
+ ? 'bg-amber-400 hover:bg-amber-300 text-slate-950'
+ : 'bg-white/5 hover:bg-white/10 text-slate-100 border border-white/10'
+ }"
+                  title="${tr('card.checkInTitle')}"
+                >
+                  ${tr('card.checkIn')}
+                </button>
+
+                <button
+                  type="button"
+                  data-action="snooze"
+                  data-id="${escapeHtml(task.id)}"
+                  class="px-2.5 py-1.5 rounded-lg bg-slate-800/90 hover:bg-slate-700 text-slate-300 border border-white/10 transition"
+                  title="${tr('card.snoozeTitle')}"
+                >
+                  +5m
+                </button>
+
+                ${!task.isFocused ? `
+                  <button
+                    type="button"
+                    data-action="set-focus"
+                    data-id="${escapeHtml(task.id)}"
+                    class="px-2.5 py-1.5 rounded-lg bg-white/5 hover:bg-white/10 text-slate-200 border border-white/10 transition"
+                    title="${tr('card.setFocusTitle')}"
+                  >
+                    ${tr('card.setFocus')}
+                  </button>
+                ` : ''}
+              </div>
+
+              <div class="flex items-center gap-1">
+                <button
+                  type="button"
+                  data-action="complete"
+                  data-id="${escapeHtml(task.id)}"
+                  class="px-2.5 py-1.5 rounded-lg bg-white/5 hover:bg-white/10 text-slate-200 border border-white/10 font-semibold transition"
+                  title="${tr('card.doneTitle')}"
+                >
+                  ${tr('card.done')}
+                </button>
+                <button
+                  type="button"
+                  data-action="toggle-pause"
+                  data-id="${escapeHtml(task.id)}"
+                  class="p-1.5 rounded-lg bg-slate-800/70 hover:bg-slate-700 text-slate-300 border border-white/10 transition"
+                  title="${task.status === 'paused' ? tr('card.resume') : tr('card.pause')}"
+                >
+                  ${task.status === 'paused' ? icon('play') : icon('pause')}
+                </button>
+                <button
+                  type="button"
+                  data-action="edit-task"
+                  data-id="${escapeHtml(task.id)}"
+                  class="p-1.5 rounded-lg bg-slate-800/70 hover:bg-slate-700 text-slate-300 border border-white/10 transition"
+                  title="${tr('card.edit')}"
+                >
+                  ${icon('edit')}
+                </button>
+                <button
+                  type="button"
+                  data-action="delete-task"
+                  data-id="${escapeHtml(task.id)}"
+                  class="p-1.5 rounded-lg bg-slate-800/70 hover:bg-white/10 text-slate-400 hover:text-white border border-white/10 transition"
+                  title="${tr('card.delete')}"
+                >
+                  ${icon('trash')}
+                </button>
+              </div>
+            </div>
+          </article>
+        `;
+      }
+
+      // Compact view: click a blank area of the top bar to hide/show extra controls
+      let lastIdleToggleAt = 0;
+
+      function applyCompact(animate) {
+        document.body.classList.toggle('ui-compact', Boolean(state.compactMode));
+        if (animate) lastIdleToggleAt = Date.now();
+      }
+
+      function toggleCompact() {
+        state.compactMode = !state.compactMode;
+        applyCompact(true);
+        saveState();
+      }
+
+      // Main 1-Second Heartbeat Loop (Clock + Task Timers)
+      let tickInterval = null;
+      function startMainLoop() {
+        if (tickInterval) clearInterval(tickInterval);
+        tickInterval = setInterval(() => {
+          const now = new Date();
+          const pad = (n) => String(n).padStart(2, '0');
+
+          // Update live clock
+          const clockEl = document.getElementById('hud-clock');
+          if (clockEl) {
+            clockEl.textContent = `${pad(now.getHours())}:${pad(now.getMinutes())}:${pad(now.getSeconds())}`;
+          }
+          const dateEl = document.getElementById('hud-date');
+          if (dateEl) {
+            dateEl.textContent = formatDateLabel(now);
+          }
+
+          // Focus time: real elapsed time while the page is open, capped at the continuous-focus limit
+          const newlyStalled = accrueFocus(now.getTime());
+          const focusDurEl = document.getElementById('hud-focus-duration');
+          if (focusDurEl) {
+            focusDurEl.textContent = formatSeconds(state.focusElapsedSeconds || 0);
+          }
+          const statsModal = document.getElementById('modal-stats');
+          if (statsModal && !statsModal.classList.contains('hidden')) renderStatsModal();
+          if (newlyStalled) {
+            playAlertSound(false);
+            saveState();
+          } else if (Date.now() - lastAutoSaveAt > 15000) {
+            lastAutoSaveAt = Date.now();
+            saveState();
+          }
+
+          // Update each active task timer
+          let newlyTriggered = false;
+          const currentHHMM = `${pad(now.getHours())}:${pad(now.getMinutes())}`;
+          const currentSec = now.getSeconds();
+
+          state.tasks.forEach((task) => {
+            if (task.status !== 'active') return;
+
+            if (task.reminderType === 'loop') {
+              if (!task.isAlerting && !task.isFocused) {
+                task.remainingSeconds = Math.max(0, (task.remainingSeconds || 60) - 1);
+                if (task.remainingSeconds === 0) {
+                  task.isAlerting = true;
+                  newlyTriggered = true;
+                  addPatrolLog(task.name, tr('log.timerDue'));
+                }
+              }
+            } else if (task.reminderType === 'scheduled') {
+              if (!task.isAlerting && task.scheduledTime === currentHHMM && currentSec === 0) {
+                task.isAlerting = true;
+                newlyTriggered = true;
+                addPatrolLog(task.name, tr('log.scheduledDue', { time: task.scheduledTime }));
+              }
+            }
+          });
+
+          if (newlyTriggered) {
+            playAlertSound(false);
+            saveState();
+            renderTasks();
+          } else {
+            // Rebuild cards only when their structure changed; otherwise just refresh the live numbers
+            const activeEl = document.activeElement;
+            const isTyping = activeEl && (activeEl.tagName === 'INPUT' || activeEl.tagName === 'TEXTAREA');
+            const canRebuild = !isTyping && Date.now() - lastIdleToggleAt > 800;
+            if (canRebuild && getRenderKey() !== lastRenderKey) {
+              renderTasks();
+            } else {
+              updateAlertBannersAndCounts();
+              updateLiveReadouts();
+            }
+          }
+        }, 1000);
+      }
+
+      // Task operations
+      function applyCheckIn(task) {
+        confirmFocus(task);
+        task.remainingSeconds = getTimerInfo(task).effectiveMinutes * 60;
+        task.isAlerting = false;
+        task.lastCheckedAt = Date.now();
+        task.checkCount = (task.checkCount || 0) + 1;
+        state.todayCheckCount = (state.todayCheckCount || 0) + 1;
+      }
+
+      function bulkCheckIn(repeatingOnly) {
+        const targets = state.tasks.filter((t) => t.status !== 'completed' && (!repeatingOnly || t.reminderType === 'loop'));
+        targets.forEach(applyCheckIn);
+        if (targets.length) {
+          addPatrolLog(tr(repeatingOnly ? 'log.allRepeating' : 'log.allProjects'), tr('log.checkedInN', { n: targets.length }));
+        }
+        saveState();
+        renderTasks();
+        showToast(tr('toast.bulkChecked', { n: targets.length }));
+      }
+
+      function checkInTask(taskId) {
+        const task = state.tasks.find((t) => t.id === taskId);
+        if (!task) return;
+        applyCheckIn(task);
+        addPatrolLog(task.name, tr('log.checkedIn'));
+        saveState();
+        renderTasks();
+        showToast(tr('toast.checkedIn', { name: task.name }));
+      }
+
+      function snoozeTask(taskId, mins) {
+        const task = state.tasks.find((t) => t.id === taskId);
+        if (!task) return;
+        task.isAlerting = false;
+        task.remainingSeconds = (task.remainingSeconds || 0) + mins * 60;
+        addPatrolLog(task.name, tr('log.snoozed', { n: mins }));
+        saveState();
+        renderTasks();
+        showToast(tr('toast.snoozed', { n: mins, name: task.name }));
+      }
+
+      function releaseFocus(task) {
+        if (!task || !task.isFocused) return;
+        task.isFocused = false;
+        if (task.reminderType === 'loop' && !task.isAlerting) {
+          task.remainingSeconds = getTimerInfo(task).effectiveMinutes * 60;
+        }
+        task.lastCheckedAt = Date.now();
+      }
+
+      // Taking a due project as the focus means you are attending to it: clear its reminder like a check-in
+      function acknowledgeOnFocus(task) {
+        if (!task || !task.isAlerting) return;
+        task.isAlerting = false;
+        task.remainingSeconds = getTimerInfo(task).effectiveMinutes * 60;
+        task.lastCheckedAt = Date.now();
+        task.checkCount = (task.checkCount || 0) + 1;
+        state.todayCheckCount = (state.todayCheckCount || 0) + 1;
+        addPatrolLog(task.name, tr('log.checkedIn'));
+      }
+
+      function setFocusedTask(taskId) {
+        state.tasks.forEach((t) => {
+          if (t.id !== taskId) releaseFocus(t);
+        });
+        state.tasks.forEach((t) => {
+          t.isFocused = (t.id === taskId);
+        });
+        resetFocusSession();
+        const focused = state.tasks.find((t) => t.id === taskId);
+        acknowledgeOnFocus(focused);
+        if (focused) {
+          addPatrolLog(focused.name, tr('log.setFocus'));
+          showToast(tr('toast.focus', { name: focused.name }));
+        }
+        saveState();
+        renderTasks();
+      }
+
+      function completeTask(taskId) {
+        const task = state.tasks.find((t) => t.id === taskId);
+        if (!task) return;
+        const wasFocused = task.isFocused;
+        task.status = 'completed';
+        task.completedAt = Date.now();
+        task.isAlerting = false;
+        task.isFocused = false;
+        if (wasFocused) {
+          const next = state.tasks.find((t) => t.status !== 'completed');
+          if (next) {
+            next.isFocused = true;
+            acknowledgeOnFocus(next);
+          }
+          resetFocusSession();
+        }
+        addPatrolLog(task.name, tr('log.completed'));
+        saveState();
+        renderTasks();
+        showToast(tr('toast.completed', { name: task.name }));
+      }
+
+      function reopenTask(taskId) {
+        const task = state.tasks.find((t) => t.id === taskId);
+        if (!task) return;
+        const effMins = (state.globalOverride && task.reminderType === 'loop')
+          ? state.globalIntervalMinutes
+          : (task.intervalMinutes || 30);
+        task.status = 'active';
+        delete task.completedAt;
+        task.isAlerting = false;
+        task.remainingSeconds = effMins * 60;
+        task.lastCheckedAt = Date.now();
+        if (!state.tasks.some((t) => t.isFocused && t.status !== 'completed')) {
+          task.isFocused = true;
+          resetFocusSession();
+        }
+        addPatrolLog(task.name, tr('log.reopened'));
+        saveState();
+        renderTasks();
+        showToast(tr('toast.reopened', { name: task.name }));
+      }
+
+      function openTaskModal(taskId) {
+        const modal = document.getElementById('modal-task');
+        const titleEl = document.getElementById('modal-task-title');
+        const idInput = document.getElementById('task-id-input');
+        const nameInput = document.getElementById('task-name-input');
+        const tagInput = document.getElementById('task-tag-input');
+        const typeInput = document.getElementById('task-reminder-type');
+        const intervalInput = document.getElementById('task-interval-input');
+        const schedInput = document.getElementById('task-scheduled-input');
+        const noteInput = document.getElementById('task-note-input');
+        const subtasksInput = document.getElementById('task-subtasks-input');
+
+        if (taskId) {
+          const task = state.tasks.find((t) => t.id === taskId);
+          if (!task) return;
+          titleEl.textContent = tr('modal.editProject');
+          idInput.value = task.id;
+          nameInput.value = task.name;
+          tagInput.value = task.tag || '';
+          typeInput.value = task.reminderType || 'loop';
+          intervalInput.value = String(task.intervalMinutes || 30);
+          schedInput.value = task.scheduledTime || '15:00';
+          noteInput.value = task.note || '';
+          subtasksInput.value = (task.subtasks || []).map((s) => s.text).join('\n');
+        } else {
+          titleEl.textContent = tr('modal.newProject');
+          idInput.value = '';
+          nameInput.value = '';
+          tagInput.value = tr('tag.general');
+          typeInput.value = 'loop';
+          intervalInput.value = '30';
+          schedInput.value = '15:30';
+          noteInput.value = '';
+          subtasksInput.value = '';
+        }
+
+        syncReminderTypeFields();
+        modal.classList.remove('hidden');
+      }
+
+      function syncReminderTypeFields() {
+        const typeInput = document.getElementById('task-reminder-type');
+        const loopGroup = document.getElementById('group-loop-setting');
+        const schedGroup = document.getElementById('group-scheduled-setting');
+        if (typeInput.value === 'scheduled') {
+          loopGroup.classList.add('hidden');
+          schedGroup.classList.remove('hidden');
+        } else {
+          loopGroup.classList.remove('hidden');
+          schedGroup.classList.add('hidden');
+        }
+      }
+
+      function renderLogsModal() {
+        const listEl = document.getElementById('log-list-container');
+        if (!listEl) return;
+        if (!state.logs || state.logs.length === 0) {
+          listEl.innerHTML = '<div class="text-slate-400 text-center py-6">' + escapeHtml(tr('log.empty')) + '</div>';
+          return;
+        }
+        listEl.innerHTML = state.logs.map((item) => `
+          <div class="flex items-center justify-between gap-2 px-3 py-2 rounded-lg bg-slate-900/75 border border-white/10">
+            <div class="truncate">
+              <span class="font-bold text-sky-300">${escapeHtml(item.project)}</span>
+              <span class="text-slate-200">${escapeHtml(item.action)}</span>
+            </div>
+            <span class="font-mono-num text-[11px] text-slate-400 shrink-0">${escapeHtml(item.time)}</span>
+          </div>
+        `).join('');
+      }
+
+      // Event Delegation & Listeners Setup
+      function bindEvents() {
+        // Delegated clicks inside tasks container
+        const container = document.getElementById('tasks-container');
+        container.addEventListener('click', (e) => {
+          const btn = e.target.closest('[data-action]');
+          if (!btn) {
+            // Compact view: clicking a blank part of a card unfolds / folds it
+            if (document.body.classList.contains('ui-compact') && !e.target.closest('input, textarea, select, label, a, button')) {
+              const card = e.target.closest('article[data-task-id]');
+              if (card) toggleCardExpanded(card);
+            }
+            return;
+          }
+          const action = btn.getAttribute('data-action');
+          const id = btn.getAttribute('data-id');
+
+          if (action === 'check-in') {
+            checkInTask(id);
+          } else if (action === 'snooze') {
+            snoozeTask(id, 5);
+          } else if (action === 'set-focus') {
+            setFocusedTask(id);
+          } else if (action === 'toggle-pause') {
+            const task = state.tasks.find((t) => t.id === id);
+            if (task) {
+              task.status = task.status === 'paused' ? 'active' : 'paused';
+              task.isAlerting = false;
+              saveState();
+              renderTasks();
+              showToast(tr(task.status === 'paused' ? 'toast.paused' : 'toast.resumed', { name: task.name }));
+            }
+          } else if (action === 'complete') {
+            completeTask(id);
+          } else if (action === 'reopen') {
+            reopenTask(id);
+          } else if (action === 'edit-task') {
+            openTaskModal(id);
+          } else if (action === 'delete-task') {
+            state.tasks = state.tasks.filter((t) => t.id !== id);
+            saveState();
+            renderTasks();
+            showToast(tr('toast.deleted'));
+          } else if (action === 'add-subtask') {
+            const input = document.getElementById('input-sub-' + id);
+            if (input && input.value.trim()) {
+              const task = state.tasks.find((t) => t.id === id);
+              if (task) {
+                task.subtasks.push({
+                  id: 'sub-' + Date.now() + '-' + Math.random().toString(36).slice(2, 6),
+                  text: input.value.trim(),
+                  done: false
+                });
+                input.value = '';
+                saveState();
+                renderTasks();
+              }
+            }
+          } else if (action === 'delete-subtask') {
+            const tId = btn.getAttribute('data-task-id');
+            const sId = btn.getAttribute('data-sub-id');
+            const task = state.tasks.find((t) => t.id === tId);
+            if (task) {
+              task.subtasks = task.subtasks.filter((s) => s.id !== sId);
+              saveState();
+              renderTasks();
+            }
+          }
+        });
+
+        // Delegated checkbox & note changes
+        container.addEventListener('change', (e) => {
+          const target = e.target;
+          const action = target.getAttribute('data-action');
+          if (action === 'toggle-subtask') {
+            const tId = target.getAttribute('data-task-id');
+            const sId = target.getAttribute('data-sub-id');
+            const task = state.tasks.find((t) => t.id === tId);
+            if (task) {
+              const sub = task.subtasks.find((s) => s.id === sId);
+              if (sub) {
+                sub.done = target.checked;
+                task.lastCheckedAt = Date.now();
+                saveState();
+                renderTasks();
+              }
+            }
+          } else if (action === 'update-note') {
+            const id = target.getAttribute('data-id');
+            const task = state.tasks.find((t) => t.id === id);
+            if (task) {
+              task.note = target.value;
+              task.lastCheckedAt = Date.now();
+              saveState();
+              showToast(tr('toast.noteSaved', { name: task.name }));
+            }
+          }
+        });
+
+        // Enter key on quick subtask input
+        container.addEventListener('keydown', (e) => {
+          const target = e.target;
+          if (target.getAttribute('data-action') === 'subtask-input-keydown' && e.key === 'Enter') {
+            e.preventDefault();
+            const id = target.getAttribute('data-id');
+            const val = target.value.trim();
+            if (val) {
+              const task = state.tasks.find((t) => t.id === id);
+              if (task) {
+                task.subtasks.push({
+                  id: 'sub-' + Date.now(),
+                  text: val,
+                  done: false
+                });
+                target.value = '';
+                saveState();
+                renderTasks();
+              }
+            }
+          }
+        });
+
+        // Rotate focus button
+        document.getElementById('btn-Rotate-focus').addEventListener('click', () => {
+          const openList = state.tasks.filter((t) => t.status !== 'completed');
+          if (openList.length === 0) return;
+          const idx = openList.findIndex((t) => t.isFocused);
+          const nextIdx = (idx + 1) % openList.length;
+          setFocusedTask(openList[nextIdx].id);
+        });
+
+        // View mode switcher
+        ['grid', 'list', 'hud'].forEach((m) => {
+          document.getElementById('btn-view-' + m).addEventListener('click', () => {
+            state.viewMode = m;
+            saveState();
+            renderTasks();
+          });
+        });
+
+        // Filter tabs
+        document.querySelectorAll('.filter-btn').forEach((btn) => {
+          btn.addEventListener('click', () => {
+            state.filter = btn.getAttribute('data-filter') || 'all';
+            document.querySelectorAll('.filter-btn').forEach((b) => {
+              b.className = 'filter-btn px-3 py-1 rounded-lg font-medium text-slate-300 hover:bg-white/5 border border-transparent transition';
+            });
+            btn.className = 'filter-btn px-3 py-1 rounded-lg font-semibold bg-sky-500/20 text-sky-300 border border-sky-400/30 transition';
+            renderTasks();
+          });
+        });
+
+        // Demo alert trigger button
+        document.getElementById('btn-trigger-demo-alert').addEventListener('click', () => {
+          const target = state.tasks.find((t) => !t.isFocused && t.status !== 'completed') || state.tasks.find((t) => t.status !== 'completed');
+          if (target) {
+            target.isAlerting = true;
+            target.remainingSeconds = 0;
+            playAlertSound(true);
+            addPatrolLog(target.name, tr('log.testAlert'));
+            renderTasks();
+            showToast(tr('toast.testAlert', { name: target.name }));
+          }
+        });
+
+        // Reset all timers
+        document.getElementById('btn-reset-all-timers').addEventListener('click', () => {
+          state.tasks.forEach((t) => {
+            if (t.status === 'completed') return;
+            const effMins = (state.globalOverride && t.reminderType === 'loop')
+              ? state.globalIntervalMinutes
+              : (t.intervalMinutes || 30);
+            t.remainingSeconds = effMins * 60;
+            t.isAlerting = false;
+          });
+          saveState();
+          renderTasks();
+          showToast(tr('toast.allReset'));
+        });
+
+        // New Task Modal events
+        document.getElementById('btn-open-new-task').addEventListener('click', () => openTaskModal(null));
+        document.getElementById('btn-close-task-modal').addEventListener('click', () => {
+          document.getElementById('modal-task').classList.add('hidden');
+        });
+        document.getElementById('btn-cancel-task-modal').addEventListener('click', () => {
+          document.getElementById('modal-task').classList.add('hidden');
+        });
+        document.getElementById('task-reminder-type').addEventListener('change', syncReminderTypeFields);
+
+        document.querySelectorAll('.quick-min-btn').forEach((btn) => {
+          btn.addEventListener('click', () => {
+            document.getElementById('task-interval-input').value = btn.getAttribute('data-quick-min');
+          });
+        });
+
+        document.getElementById('form-task').addEventListener('submit', (e) => {
+          e.preventDefault();
+          const id = document.getElementById('task-id-input').value;
+          const name = document.getElementById('task-name-input').value.trim();
+          if (!name) return;
+          const tag = document.getElementById('task-tag-input').value.trim() || tr('tag.general');
+          const reminderType = document.getElementById('task-reminder-type').value;
+          const intervalMinutes = Math.max(1, parseInt(document.getElementById('task-interval-input').value, 10) || 30);
+          const scheduledTime = document.getElementById('task-scheduled-input').value || '15:00';
+          const note = document.getElementById('task-note-input').value.trim();
+          const rawSubtasks = document.getElementById('task-subtasks-input').value
+            .split('\n')
+            .map((s) => s.trim())
+            .filter(Boolean);
+
+          if (id) {
+            const existing = state.tasks.find((t) => t.id === id);
+            if (existing) {
+              existing.name = name;
+              existing.tag = tag;
+              existing.reminderType = reminderType;
+              existing.intervalMinutes = intervalMinutes;
+              existing.remainingSeconds = intervalMinutes * 60;
+              existing.scheduledTime = scheduledTime;
+              existing.note = note;
+              // Preserve existing checked states where text matches
+              const oldMap = {};
+              (existing.subtasks || []).forEach((s) => { oldMap[s.text] = s.done; });
+              existing.subtasks = rawSubtasks.map((txt, idx) => ({
+                id: 'sub-' + Date.now() + '-' + idx,
+                text: txt,
+                done: Boolean(oldMap[txt])
+              }));
+            }
+            showToast(tr('toast.updated', { name }));
+          } else {
+            state.tasks.unshift({
+              id: 'proj-' + Date.now(),
+              name,
+              tag,
+              reminderType,
+              intervalMinutes,
+              remainingSeconds: intervalMinutes * 60,
+              scheduledTime,
+              status: 'active',
+              isFocused: false,
+              isAlerting: false,
+              lastCheckedAt: Date.now(),
+              checkCount: 0,
+              note,
+              subtasks: rawSubtasks.map((txt, idx) => ({
+                id: 'sub-' + Date.now() + '-' + idx,
+                text: txt,
+                done: false
+              }))
+            });
+            if (state.filter === 'completed') state.filter = 'all';
+            showToast(tr('toast.created', { name }));
+          }
+
+          document.getElementById('modal-task').classList.add('hidden');
+          saveState();
+          renderTasks();
+        });
+
+        // Global Timer Modal
+        const modalGlobal = document.getElementById('modal-global');
+        document.getElementById('btn-open-global-timer').addEventListener('click', () => {
+          document.getElementById('toggle-global-override').checked = Boolean(state.globalOverride);
+          document.getElementById('input-global-interval').value = String(state.globalIntervalMinutes || 25);
+          document.getElementById('select-sound-style').value = state.soundStyle || 'chime';
+          document.getElementById('toggle-keep-awake').checked = state.keepAwake !== false;
+          modalGlobal.classList.remove('hidden');
+        });
+        document.getElementById('btn-close-global-modal').addEventListener('click', () => modalGlobal.classList.add('hidden'));
+        document.getElementById('btn-test-sound').addEventListener('click', () => {
+          state.soundStyle = document.getElementById('select-sound-style').value;
+          playAlertSound(true);
+        });
+        document.getElementById('btn-apply-global-to-all').addEventListener('click', () => {
+          const mins = Math.max(1, parseInt(document.getElementById('input-global-interval').value, 10) || 25);
+          state.globalIntervalMinutes = mins;
+          state.globalOverride = true;
+          document.getElementById('toggle-global-override').checked = true;
+          state.tasks.forEach((t) => {
+            if (t.reminderType === 'loop') {
+              t.intervalMinutes = mins;
+              t.remainingSeconds = mins * 60;
+              t.isAlerting = false;
+            }
+          });
+          applyAppearance();
+          saveState();
+          renderTasks();
+          showToast(tr('toast.applyAll', { n: mins }));
+        });
+        document.getElementById('btn-save-global-modal').addEventListener('click', () => {
+          state.globalOverride = document.getElementById('toggle-global-override').checked;
+          state.globalIntervalMinutes = Math.max(1, parseInt(document.getElementById('input-global-interval').value, 10) || 25);
+          state.soundStyle = document.getElementById('select-sound-style').value;
+          state.keepAwake = document.getElementById('toggle-keep-awake').checked;
+          syncWakeLock(false);
+          modalGlobal.classList.add('hidden');
+          applyAppearance();
+          saveState();
+          renderTasks();
+          showToast(tr('toast.settingsSaved'));
+        });
+
+        // Wallpaper Modal
+        const modalWp = document.getElementById('modal-wallpaper');
+        document.getElementById('btn-open-wallpaper').addEventListener('click', () => {
+          document.getElementById('slider-bg-dim').value = String(state.bgDim ?? 60);
+          document.getElementById('label-dim-value').textContent = (state.bgDim ?? 60) + '%';
+          document.getElementById('slider-glass-blur').value = String(state.glassBlur ?? 16);
+          document.getElementById('label-blur-value').textContent = (state.glassBlur ?? 16) + 'px';
+          document.getElementById('slider-panel-alpha').value = String(state.panelAlpha ?? 72);
+          document.getElementById('label-panel-value').textContent = (state.panelAlpha ?? 72) + '%';
+          modalWp.classList.remove('hidden');
+        });
+        document.getElementById('btn-close-wallpaper-modal').addEventListener('click', () => modalWp.classList.add('hidden'));
+        document.getElementById('btn-save-wallpaper-modal').addEventListener('click', () => modalWp.classList.add('hidden'));
+
+        document.querySelectorAll('.bg-preset-btn').forEach((btn) => {
+          btn.addEventListener('click', () => {
+            state.wallpaperPreset = btn.getAttribute('data-bg-preset');
+            applyAppearance();
+            saveState();
+            showToast(tr('toast.wallpaper'));
+          });
+        });
+
+        document.getElementById('input-local-wallpaper').addEventListener('change', (e) => {
+          const file = e.target.files && e.target.files[0];
+          if (!file) return;
+          const reader = new FileReader();
+          reader.onload = function (ev) {
+            state.customWallpaperDataUrl = ev.target.result;
+            state.wallpaperPreset = 'custom';
+            applyAppearance();
+            saveState();
+            showToast(tr('toast.wallpaperApplied'));
+          };
+          reader.readAsDataURL(file);
+        });
+
+        document.getElementById('slider-bg-dim').addEventListener('input', (e) => {
+          state.bgDim = parseInt(e.target.value, 10);
+          document.getElementById('label-dim-value').textContent = state.bgDim + '%';
+          applyAppearance();
+          saveState();
+        });
+
+        document.getElementById('slider-glass-blur').addEventListener('input', (e) => {
+          state.glassBlur = parseInt(e.target.value, 10);
+          document.getElementById('label-blur-value').textContent = state.glassBlur + 'px';
+          applyAppearance();
+          saveState();
+        });
+
+        // Accent theme swatches
+        document.querySelectorAll('.accent-swatch').forEach((btn) => {
+          btn.addEventListener('click', () => {
+            state.accentTheme = btn.getAttribute('data-accent');
+            applyAppearance();
+            saveState();
+            showToast(tr('toast.theme', { name: tr('accent.' + state.accentTheme) }));
+          });
+        });
+
+        // Panel color swatches
+        document.querySelectorAll('.surface-swatch').forEach((btn) => {
+          btn.addEventListener('click', () => {
+            state.surfaceTheme = btn.getAttribute('data-surface');
+            applyAppearance();
+            saveState();
+            showToast(tr('toast.panel', { name: tr('surface.' + state.surfaceTheme) }));
+          });
+        });
+
+        document.getElementById('slider-panel-alpha').addEventListener('input', (e) => {
+          state.panelAlpha = parseInt(e.target.value, 10);
+          document.getElementById('label-panel-value').textContent = state.panelAlpha + '%';
+          applyAppearance();
+          saveState();
+        });
+
+        // Compact view: click a blank area of the top bar
+        document.getElementById('app-header').addEventListener('click', (e) => {
+          if (e.target.closest('button, input, select, textarea, label, a')) return;
+          toggleCompact();
+        });
+
+        // Re-flow masonry columns when the window crosses a breakpoint
+        let resizeTimer = null;
+        window.addEventListener('resize', () => {
+          if (resizeTimer) clearTimeout(resizeTimer);
+          resizeTimer = setTimeout(() => {
+            if (getMasonryColumnCount() !== lastMasonryCols) renderTasks();
+          }, 150);
+        });
+
+        // Language toggle
+        document.getElementById('btn-toggle-lang').addEventListener('click', () => {
+          state.lang = state.lang === 'zh' ? 'en' : 'zh';
+          applyLanguage();
+          applyAppearance();
+          renderTasks();
+          renderLogsModal();
+          saveState();
+          showToast(tr('toast.lang'));
+        });
+
+        // Sound quick toggle
+        document.getElementById('btn-toggle-sound').addEventListener('click', () => {
+          state.soundEnabled = !state.soundEnabled;
+          applyAppearance();
+          saveState();
+          showToast(state.soundEnabled ? tr('toast.soundOn') : tr('toast.soundOff'));
+        });
+
+        // Compact view: a click outside the cards folds all unfolded cards
+        document.addEventListener('click', (e) => {
+          if (!expandedCards.size) return;
+          if (e.target.closest('article[data-task-id], #modal-task, #modal-global, #modal-wallpaper, #modal-stats, #modal-log, #toast-box')) return;
+          collapseAllCards();
+        });
+
+        // One-click check-ins
+        document.getElementById('btn-checkin-repeating').addEventListener('click', () => bulkCheckIn(true));
+        document.getElementById('btn-checkin-all').addEventListener('click', () => bulkCheckIn(false));
+
+        // Today's focus stats
+        const modalStats = document.getElementById('modal-stats');
+        document.getElementById('btn-open-stats').addEventListener('click', () => {
+          renderStatsModal();
+          modalStats.classList.remove('hidden');
+        });
+        document.getElementById('btn-close-stats-modal').addEventListener('click', () => modalStats.classList.add('hidden'));
+        document.getElementById('btn-ok-stats-modal').addEventListener('click', () => modalStats.classList.add('hidden'));
+        window.addEventListener('pagehide', saveState);
+
+        // Patrol Log Modal
+        const modalLog = document.getElementById('modal-log');
+        document.getElementById('btn-open-log-drawer').addEventListener('click', () => {
+          renderLogsModal();
+          modalLog.classList.remove('hidden');
+        });
+        document.getElementById('btn-close-log-modal').addEventListener('click', () => modalLog.classList.add('hidden'));
+        document.getElementById('btn-ok-log-modal').addEventListener('click', () => modalLog.classList.add('hidden'));
+        document.getElementById('btn-clear-logs').addEventListener('click', () => {
+          state.logs = [];
+          saveState();
+          renderLogsModal();
+          showToast(tr('toast.logCleared'));
+        });
+
+        // Fullscreen Toggle
+        document.getElementById('btn-fullscreen').addEventListener('click', () => {
+          if (!document.fullscreenElement) {
+            if (document.documentElement.requestFullscreen) {
+              document.documentElement.requestFullscreen().catch(() => {
+                showToast(tr('toast.fsBlocked'));
+              });
+            }
+          } else {
+            if (document.exitFullscreen) {
+              document.exitFullscreen().catch(() => {});
+            }
+          }
+        });
+
+        document.addEventListener('fullscreenchange', () => {
+          const lbl = document.getElementById('fullscreen-label');
+          if (lbl) {
+            lbl.textContent = document.fullscreenElement ? tr('btn.exitFullscreen') : tr('btn.fullscreen');
+          }
+        });
+
+        // Export / Import / Reset Demo
+        document.getElementById('btn-export-json').addEventListener('click', () => {
+          const dataStr = 'data:text/json;charset=utf-8,' + encodeURIComponent(JSON.stringify(state, null, 2));
+          const a = document.createElement('a');
+          a.setAttribute('href', dataStr);
+          a.setAttribute('download', 'pulsedesk_backup.json');
+          document.body.appendChild(a);
+          a.click();
+          a.remove();
+          showToast(tr('toast.exported'));
+        });
+
+        document.getElementById('input-import-json').addEventListener('change', (e) => {
+          const file = e.target.files && e.target.files[0];
+          if (!file) return;
+          const reader = new FileReader();
+          reader.onload = function (ev) {
+            try {
+              const imported = JSON.parse(ev.target.result);
+              if (imported && Array.isArray(imported.tasks)) {
+                state = Object.assign({}, state, imported);
+                applyLanguage();
+                applyAppearance();
+                applyCompact(false);
+                saveState();
+                renderTasks();
+                showToast(tr('toast.imported'));
+              }
+            } catch (err) {
+              showToast(tr('toast.importFailed'));
+            }
+          };
+          reader.readAsText(file);
+        });
+
+        document.getElementById('btn-reset-demo').addEventListener('click', () => {
+          state.tasks = getDefaultTasks();
+          saveState();
+          renderTasks();
+          showToast(tr('toast.demo'));
+        });
+      }
+
+      // Initialize App
+      window.addEventListener('DOMContentLoaded', () => {
+        loadState();
+        resetTimersOnOpen();
+        startNewDayIfNeeded(Date.now());
+        lastTickAt = Date.now();
+        applyLanguage();
+        applyAppearance();
+        renderTasks();
+        bindEvents();
+        applyCompact(false);
+        setupDragReorder();
+        setupWakeLock();
+        startMainLoop();
+      });
+    })();
+  </script>
+</body>
+</html>
