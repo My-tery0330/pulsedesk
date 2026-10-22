@@ -14,8 +14,3 @@ and other visitors cannot see your projects. Data is per browser and per device:
 use **Export** / **Import** at the bottom of the page to back it up or move it.
 Clearing your browser's site data deletes it.
 
-## Publish with GitHub Pages
-
-1. Create a public repository and upload `index.html` and the `assets/` folder to its root.
-2. Repository **Settings > Pages**: Source = *Deploy from a branch*, Branch = `main`, folder `/ (root)`.
-3. After about a minute the site is live at `https://<your-user>.github.io/<repository>/`.
